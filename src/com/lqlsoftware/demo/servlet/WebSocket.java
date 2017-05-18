@@ -1,4 +1,4 @@
-package com.lqlsoftware.demo;
+package com.lqlsoftware.demo.servlet;
 
 import java.io.EOFException;
 import java.io.IOException;
@@ -10,6 +10,8 @@ import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
+
+import com.lqlsoftware.demo.dao.SessionUtil;
 
 @ServerEndpoint(value = "/chat/{userId}")
 public class WebSocket {

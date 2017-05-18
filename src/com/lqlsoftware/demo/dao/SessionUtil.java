@@ -1,4 +1,4 @@
-package com.lqlsoftware.demo;
+package com.lqlsoftware.demo.dao;
 
 import javax.websocket.Session;  
 import java.util.Map;  
