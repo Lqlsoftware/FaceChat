@@ -1,6 +1,9 @@
 package com.lqlsoftware.demo;
 
+import java.io.EOFException;
 import java.io.IOException;
+import java.nio.ByteBuffer;
+
 import javax.websocket.OnClose;
 import javax.websocket.OnMessage;
 import javax.websocket.OnOpen;
@@ -8,32 +11,33 @@ import javax.websocket.Session;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
 
-@ServerEndpoint("/chat/{userId}")
+@ServerEndpoint(value = "/chat/{userId}")
 public class WebSocket {
-
+	
 	// 收到信息
 	@OnMessage
-	public void onMessage(@PathParam("userId") String userId, String message,
+	public synchronized void onMessage(@PathParam("userId") String userId, String message,
 			Session session) throws IOException, InterruptedException {
-		System.out.println(message);
-		String[] text = message.split("->");
+		System.out.println(userId + " : " + message);
 		try {
-			String touserId = text[1];
-			String msg = text[0];
-			if (touserId.equals("sys:public")) {
-				for (Session value : SessionUtil.clients.values()) {
-					if (!value.equals(session))
-						value.getAsyncRemote().sendText(userId + " : " + msg);
-				}  
+			for (Session value : SessionUtil.clients.values()) {
+				if (!value.equals(session))
+					value.getBasicRemote().sendText(userId + " : " + message);
 			}
-			else if (SessionUtil.hasConnection(touserId)) {
-				SessionUtil.get(touserId).getAsyncRemote()	.sendText(userId + " : " + msg);
-			} else {
-				session.getBasicRemote().sendText("sys:" + touserId + " is offline");
-			}
-		} catch (ArrayIndexOutOfBoundsException e) {
+		} catch (Exception e) {
 			session.getBasicRemote().sendText("sys:Invaild Input");
-			return;
+		}
+	}
+
+	@OnMessage
+	public synchronized void broadcast(@PathParam("userId") String userId, ByteBuffer data,
+			Session session) throws IOException, EOFException {
+		System.out.println(userId + ":audio-" + data);
+		for (Session value : SessionUtil.clients.values()) {
+			if (!value.equals(session)) {
+				value.getBasicRemote().sendText(userId + ":audio");
+				value.getBasicRemote().sendBinary(data);
+			}
 		}
 	}
 
@@ -45,15 +49,16 @@ public class WebSocket {
 			SessionUtil.remove(userId);
 		}
 		SessionUtil.put(userId, session);
-		session.getBasicRemote()
-				.sendText(
-						"sys:Welcome to fuckchat v0.1, type message->user to send a message");
+		for (Session value : SessionUtil.clients.values()) {
+			value.getAsyncRemote().sendText(
+					"sys:欢迎小伙伴 " + userId + " 来到FuckChat");
+		}
 		System.out.println(userId + " online");
 	}
 
 	// 关闭连接
 	@OnClose
-	public void onClose(@PathParam("userId") String userId) {
+	public void onClose(@PathParam("userId") String userId)  throws EOFException{
 		SessionUtil.remove(userId);
 		System.out.println(userId + " offine");
 	}
