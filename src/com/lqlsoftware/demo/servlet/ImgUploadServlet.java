@@ -51,7 +51,7 @@ public class ImgUploadServlet extends HttpServlet {
 			
 			File img = new File(path);
 			BufferedImage imgsrc = ImageIO.read(img);
-			// 压缩文件
+			// 压缩图片并保存
 			ImgCompress imgCompress = new ImgCompress();
 			imgCompress.setType(type.substring(type.lastIndexOf("image")+6));
 			imgCompress.setImg(imgsrc);
