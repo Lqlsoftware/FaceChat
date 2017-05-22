@@ -1,9 +1,11 @@
 package com.lqlsoftware.demo.servlet;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 import java.util.Date;
-import java.util.Map.Entry;
 
+import javax.imageio.ImageIO;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -14,6 +16,7 @@ import javax.servlet.http.Part;
 import javax.websocket.Session;
 
 import com.lqlsoftware.demo.dao.SessionUtil;
+import com.lqlsoftware.demo.dao.ImgCompress;
 
 @WebServlet(name = "ImgUploadServlet" ,urlPatterns = "/imgUpload")
 @MultipartConfig
@@ -35,21 +38,29 @@ public class ImgUploadServlet extends HttpServlet {
 		String userId = request.getParameter("userId");
 		
 		String root = request.getServletContext().getRealPath("/");
-		String path = "";
+		String file = "";
 		
 		// 获取图片
 		Part part = request.getPart("img");
 		if ( part.getSize() > 0 ) {
+			String type = part.getContentType();
 			// 存入服务器
-			path = root  + "/imgs/" + new Date().getTime() + "." + part.getContentType();
+			file = "/imgs/" + new Date().getTime() + "." + type.substring(type.indexOf('/')+1);
+			String path = root  + file;
 			part.write(path);
+			
+			File img = new File(path);
+			BufferedImage imgsrc = ImageIO.read(img);
+			// 压缩文件
+			ImgCompress imgCompress = new ImgCompress();
+			imgCompress.setType(type.substring(type.lastIndexOf("image")+6));
+			imgCompress.setImg(imgsrc);
+			imgCompress.setNewFilePath( "/imgs_s/" + file.substring(6));
+			imgCompress.resizeFix(800, 800);
 		}
-		for (Entry<String, Session> i : SessionUtil.clients.entrySet()) {
-			if (!i.getKey().equals(userId)) {
-				i.getValue().getBasicRemote().sendText(userId + ":img" + path);
-			}
+		for (Session value : SessionUtil.clients.values()) {
+				value.getBasicRemote().sendText(userId + ":imghttp://lqlsoftware.top/fuckchat" + file);
 		}
-		response.getWriter().write(path);
 		return;
 	}
 }
