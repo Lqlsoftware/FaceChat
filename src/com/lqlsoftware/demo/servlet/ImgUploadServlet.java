@@ -59,7 +59,7 @@ public class ImgUploadServlet extends HttpServlet {
 			imgCompress.resizeFix(800, 800);
 		}
 		for (Session value : SessionUtil.clients.values()) {
-				value.getBasicRemote().sendText(userId + ":imghttp://lqlsoftware.top/fuckchat" + file);
+				value.getBasicRemote().sendText(userId + ":imghttp://lqlsoftware.top/fuckchat/imgs_s" + file.substring(6));
 		}
 		return;
 	}
