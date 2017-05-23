@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 
 import javax.websocket.OnClose;
+import javax.websocket.OnError;
 import javax.websocket.OnMessage;
 import javax.websocket.OnOpen;
 import javax.websocket.Session;
@@ -61,6 +62,13 @@ public class WebSocket {
 	// 关闭连接
 	@OnClose
 	public void onClose(@PathParam("userId") String userId)  throws EOFException{
+		SessionUtil.remove(userId);
+		System.out.println(userId + " offine");
+	}
+	
+	// 连接出错
+	@OnError
+	public void onError(@PathParam("userId") String userId)  throws EOFException{
 		SessionUtil.remove(userId);
 		System.out.println(userId + " offine");
 	}

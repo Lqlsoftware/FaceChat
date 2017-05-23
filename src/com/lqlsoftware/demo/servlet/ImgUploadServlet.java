@@ -44,22 +44,33 @@ public class ImgUploadServlet extends HttpServlet {
 		Part part = request.getPart("img");
 		if ( part.getSize() > 0 ) {
 			String type = part.getContentType();
-			// 存入服务器
-			file = "/imgs/" + new Date().getTime() + "." + type.substring(type.indexOf('/')+1);
-			String path = root  + file;
-			part.write(path);
-			
-			File img = new File(path);
-			BufferedImage imgsrc = ImageIO.read(img);
-			// 压缩图片并保存
-			ImgCompress imgCompress = new ImgCompress();
-			imgCompress.setType(type.substring(type.lastIndexOf("image")+6));
-			imgCompress.setImg(imgsrc);
-			imgCompress.setNewFilePath(root + "/imgs_s/" + file.substring(6));
-			imgCompress.resizeFix(800, 800);
-		}
-		for (Session value : SessionUtil.clients.values()) {
-				value.getBasicRemote().sendText(userId + ":imghttp://lqlsoftware.top/fuckchat/imgs_s/" + file.substring(6));
+			if (type.matches("^(video|VIDEO).*$")) {
+				// 存入服务器
+				file = "vids/" + new Date().getTime() + ".mp4";
+				String path = root  + file;
+				part.write(path);
+				for (Session value : SessionUtil.clients.values())
+					value.getBasicRemote().sendText(userId + ":vidhttp://lqlsoftware.top/fuckchat/" + file);
+			}
+			else if (type.matches("^(image|IMAGE).*$")) {
+				// 存入服务器
+				file = "imgs/" + new Date().getTime() + "." + type.substring(type.indexOf('/')+1);
+				String path = root  + file;
+				part.write(path);
+				if (!type.substring(type.indexOf('/')+1).equals("gif") && !type.substring(type.indexOf('/')+1).equals("GIF")) {
+					File img = new File(path);
+					BufferedImage imgsrc = ImageIO.read(img);
+					// 压缩图片并保存
+					ImgCompress imgCompress = new ImgCompress();
+					imgCompress.setType(type.substring(type.lastIndexOf("image")+6));
+					imgCompress.setImg(imgsrc);
+					imgCompress.setNewFilePath(root + "/imgs_s/" + file.substring(6));
+					imgCompress.resizeFix(800, 800);
+					file = "imgs_s/" + file.substring(6);
+				}
+				for (Session value : SessionUtil.clients.values())
+					value.getBasicRemote().sendText(userId + ":imghttp://lqlsoftware.top/fuckchat/" + file);
+			}
 		}
 		return;
 	}
