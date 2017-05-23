@@ -46,7 +46,7 @@ public class ImgUploadServlet extends HttpServlet {
 			String type = part.getContentType();
 			if (type.matches("^(video|VIDEO).*$")) {
 				// 存入服务器
-				// .quicktime好像safari不支持
+				// .quicktime好像safari播放不了
 				file = "vids/" + new Date().getTime() + ".mp4";
 				String path = root  + file;
 				part.write(path);
