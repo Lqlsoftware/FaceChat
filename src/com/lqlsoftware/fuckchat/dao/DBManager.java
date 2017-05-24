@@ -5,23 +5,18 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-	/**
-	 * java与mySQL连接类
-	 * 
-	 * @author Administrator
-	 * 
-	 */
-	public class DBManager {
-	    // 数据库驱动
+public class DBManager {
+
+    // 数据库驱动
 	    private static String driver = "com.mysql.jdbc.Driver";  
+    
+    // 数据库url
+	    private static String url = "jdbc:mysql://localhost:3306/fuckchat?useUnicode=true&characterEncoding=UTF-8";
 	    
-	    // 数据库url
-	    private static String url = "jdbc:mysql://localhost:3306/fuckchat";
-	    
-		// 数据库用户名 root
+	// 数据库用户名 root
 		private static String userName = "root";
 		
-		// 数据库的用户密码
+	// 数据库的用户密码
 		private static String userPassword = "123456";
 
 		public static String getDriver() {
