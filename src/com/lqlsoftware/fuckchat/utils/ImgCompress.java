@@ -1,4 +1,4 @@
-package com.lqlsoftware.demo.dao;
+package com.lqlsoftware.fuckchat.utils;
 
 import java.io.*;  
 import java.awt.*;  

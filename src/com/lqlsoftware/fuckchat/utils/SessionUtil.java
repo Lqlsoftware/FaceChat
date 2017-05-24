@@ -1,4 +1,4 @@
-package com.lqlsoftware.demo.dao;
+package com.lqlsoftware.fuckchat.utils;
 
 import javax.websocket.Session;  
 import java.util.Map;  

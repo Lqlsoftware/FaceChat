@@ -1,8 +1,9 @@
-package com.lqlsoftware.demo.servlet;
+package com.lqlsoftware.fuckchat.servlet;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Date;
 
 import javax.imageio.ImageIO;
@@ -13,10 +14,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
-import javax.websocket.Session;
-
-import com.lqlsoftware.demo.dao.SessionUtil;
-import com.lqlsoftware.demo.dao.ImgCompress;
+import com.lqlsoftware.fuckchat.utils.ImgCompress;
+import com.lqlsoftware.fuckchat.utils.SocketUtil;
+import com.lqlsoftware.fuckchat.utils.msgUtil;
 
 @WebServlet(name = "ImgUploadServlet" ,urlPatterns = "/imgUpload")
 @MultipartConfig
@@ -50,8 +50,12 @@ public class ImgUploadServlet extends HttpServlet {
 				file = "vids/" + new Date().getTime() + ".mp4";
 				String path = root  + file;
 				part.write(path);
-				for (Session value : SessionUtil.clients.values())
-					value.getBasicRemote().sendText(userId + ":vidhttp://lqlsoftware.top/fuckchat/" + file);
+				try {
+					msgUtil.addMsg(userId, userId + ":vidhttp://lqlsoftware.top/fuckchat/" + file, "vid");
+					SocketUtil.broadcast(userId + ":vidhttp://lqlsoftware.top/fuckchat/" + file);
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
 			}
 			else if (type.matches("^(image|IMAGE).*$")) {
 				// ´æÈë·þÎñÆ÷
@@ -69,8 +73,12 @@ public class ImgUploadServlet extends HttpServlet {
 					imgCompress.resizeFix(800, 800);
 					file = "imgs_s/" + file.substring(6);
 				}
-				for (Session value : SessionUtil.clients.values())
-					value.getBasicRemote().sendText(userId + ":imghttp://lqlsoftware.top/fuckchat/" + file);
+				try {
+					msgUtil.addMsg(userId, userId + ":imghttp://lqlsoftware.top/fuckchat/" + file, "img");
+					SocketUtil.broadcast(userId + ":imghttp://lqlsoftware.top/fuckchat/" + file);
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
 			}
 		}
 		return;

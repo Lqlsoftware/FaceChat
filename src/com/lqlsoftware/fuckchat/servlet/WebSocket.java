@@ -1,17 +1,19 @@
-package com.lqlsoftware.demo.servlet;
+package com.lqlsoftware.fuckchat.servlet;
 
-import java.io.EOFException;
 import java.io.IOException;
-import java.nio.ByteBuffer;
+import java.sql.SQLException;
 
 import javax.websocket.OnClose;
+import javax.websocket.OnError;
 import javax.websocket.OnMessage;
 import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
 
-import com.lqlsoftware.demo.dao.SessionUtil;
+import com.lqlsoftware.fuckchat.utils.SessionUtil;
+import com.lqlsoftware.fuckchat.utils.SocketUtil;
+import com.lqlsoftware.fuckchat.utils.msgUtil;
 
 @ServerEndpoint(value = "/chat/{userId}")
 public class WebSocket {
@@ -20,48 +22,39 @@ public class WebSocket {
 	@OnMessage
 	public synchronized void onMessage(@PathParam("userId") String userId, String message,
 			Session session) throws IOException, InterruptedException {
-		System.out.println(userId + " : " + message);
 		try {
-			for (Session value : SessionUtil.clients.values()) {
-				if (!value.equals(session))
-					value.getBasicRemote().sendText(userId + " : " + message);
-			}
+			msgUtil.addMsg(userId, userId + " : " + message, "msg");
+			SocketUtil.broadcastWithout(userId + " : " + message, session);
 		} catch (Exception e) {
 			session.getBasicRemote().sendText("sys:Invaild Input");
-		}
-	}
-
-	@OnMessage
-	public synchronized void broadcast(@PathParam("userId") String userId, ByteBuffer data,
-			Session session) throws IOException, EOFException {
-		System.out.println(userId + ":audio-" + data);
-		for (Session value : SessionUtil.clients.values()) {
-			if (!value.equals(session)) {
-				value.getBasicRemote().sendText(userId + ":audio");
-				value.getBasicRemote().sendBinary(data);
-			}
 		}
 	}
 
 	// 打开连接
 	@OnOpen
 	public void onOpen(@PathParam("userId") String userId, Session session)
-			throws IOException, InterruptedException {
+			throws IOException, InterruptedException, SQLException {
 		if (SessionUtil.hasConnection(userId)) {
+			SocketUtil.sendTo("sys:You are current offline.", userId);
 			SessionUtil.remove(userId);
 		}
 		SessionUtil.put(userId, session);
-		for (Session value : SessionUtil.clients.values()) {
-			value.getAsyncRemote().sendText(
-					"sys:欢迎小伙伴 " + userId + " 来到FuckChat");
-		}
+		msgUtil.sendHistoryMsg(userId);
+		SocketUtil.broadcast("sys:欢迎小伙伴 " + userId + " 来到FuckChat");
 		System.out.println(userId + " online");
 	}
 
 	// 关闭连接
 	@OnClose
-	public void onClose(@PathParam("userId") String userId)  throws EOFException{
+	public void onClose(@PathParam("userId") String userId)  throws IOException{
+		SocketUtil.sendTo("sys:You are current offline.", userId);
 		SessionUtil.remove(userId);
 		System.out.println(userId + " offine");
 	}
+	
+    @OnError
+    public void onError(@PathParam("userId") String userId,Throwable throwable) {
+		SessionUtil.remove(userId);
+        System.out.println(throwable.getMessage());
+    }
 }
