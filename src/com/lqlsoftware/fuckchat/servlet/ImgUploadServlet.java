@@ -30,23 +30,23 @@ public class ImgUploadServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		// ÉèÖÃ´«ÊäÊı¾İ¸ñÊ½
+		// è®¾ç½®ä¼ è¾“æ•°æ®æ ¼å¼
 		request.setCharacterEncoding("UTF-8");
 		response.setHeader("content-type","text/html;charset=UTF-8");
 		
-		// »ñÈ¡Ò³ÃæÊı¾İ
+		// è·å–é¡µé¢æ•°æ®
 		String userId = request.getParameter("userId");
 		
 		String root = request.getServletContext().getRealPath("/");
 		String file = "";
 		
-		// »ñÈ¡Í¼Æ¬
+		// è·å–å›¾ç‰‡
 		Part part = request.getPart("img");
 		if ( part.getSize() > 0 ) {
 			String type = part.getContentType();
 			if (type.matches("^(video|VIDEO).*$")) {
-				// ´æÈë·şÎñÆ÷
-				// .quicktimeºÃÏñsafari²¥·Å²»ÁË
+				// å­˜å…¥æœåŠ¡å™¨
+				// .quicktimeå¥½åƒsafariæ’­æ”¾ä¸äº†
 				file = "vids/" + new Date().getTime() + ".mp4";
 				String path = root  + file;
 				part.write(path);
@@ -58,14 +58,14 @@ public class ImgUploadServlet extends HttpServlet {
 				}
 			}
 			else if (type.matches("^(image|IMAGE).*$")) {
-				// ´æÈë·şÎñÆ÷
+				// å­˜å…¥æœåŠ¡å™¨
 				file = "imgs/" + new Date().getTime() + "." + type.substring(type.indexOf('/')+1);
 				String path = root  + file;
 				part.write(path);
 				if (!type.substring(type.indexOf('/')+1).equals("gif") && !type.substring(type.indexOf('/')+1).equals("GIF")) {
 					File img = new File(path);
 					BufferedImage imgsrc = ImageIO.read(img);
-					// Ñ¹ËõÍ¼Æ¬²¢±£´æ
+					// å‹ç¼©å›¾ç‰‡å¹¶ä¿å­˜
 					ImgCompress imgCompress = new ImgCompress();
 					imgCompress.setType(type.substring(type.lastIndexOf("image")+6));
 					imgCompress.setImg(imgsrc);

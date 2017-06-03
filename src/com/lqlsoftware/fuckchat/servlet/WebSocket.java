@@ -18,7 +18,7 @@ import com.lqlsoftware.fuckchat.utils.msgUtil;
 @ServerEndpoint(value = "/chat/{userId}")
 public class WebSocket {
 	
-	// ÊÕµ½ĞÅÏ¢
+	// æ”¶åˆ°ä¿¡æ¯
 	@OnMessage
 	public synchronized void onMessage(@PathParam("userId") String userId, String message,
 			Session session) throws IOException, InterruptedException {
@@ -30,7 +30,7 @@ public class WebSocket {
 		}
 	}
 
-	// ´ò¿ªÁ¬½Ó
+	// æ‰“å¼€è¿æ¥
 	@OnOpen
 	public void onOpen(@PathParam("userId") String userId, Session session)
 			throws IOException, InterruptedException, SQLException {
@@ -40,11 +40,11 @@ public class WebSocket {
 		}
 		SessionUtil.put(userId, session);
 		msgUtil.sendHistoryMsg(userId);
-		SocketUtil.broadcast("sys:»¶Ó­Ğ¡»ï°é " + userId + " À´µ½FuckChat");
+		SocketUtil.broadcast("sys:æ¬¢è¿å°ä¼™ä¼´ " + userId + " æ¥åˆ°FuckChat");
 		System.out.println(userId + " online");
 	}
 
-	// ¹Ø±ÕÁ¬½Ó
+	// å…³é—­è¿æ¥
 	@OnClose
 	public void onClose(@PathParam("userId") String userId)  throws IOException{
 		SocketUtil.sendTo("sys:You are current offline.", userId);

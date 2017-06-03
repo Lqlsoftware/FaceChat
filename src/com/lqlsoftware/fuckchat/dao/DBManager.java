@@ -7,16 +7,16 @@ import java.sql.SQLException;
 
 public class DBManager {
 
-    // Êı¾İ¿âÇı¶¯
+    // æ•°æ®åº“é©±åŠ¨
 	    private static String driver = "com.mysql.jdbc.Driver";  
     
-    // Êı¾İ¿âurl
+    // æ•°æ®åº“url
 	    private static String url = "jdbc:mysql://localhost:3306/fuckchat?useUnicode=true&characterEncoding=UTF-8";
 	    
-	// Êı¾İ¿âÓÃ»§Ãû root
+	// æ•°æ®åº“ç”¨æˆ·å root
 		private static String userName = "root";
 		
-	// Êı¾İ¿âµÄÓÃ»§ÃÜÂë
+	// æ•°æ®åº“çš„ç”¨æˆ·å¯†ç 
 		private static String userPassword = "123456";
 
 		public static String getDriver() {
