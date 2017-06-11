@@ -40,9 +40,6 @@ public class WebSocket {
 			SocketUtil.sendTo("sys:You are current offline.", userId);
 			SessionUtil.remove(userId);
 		}
-		try {
-			userUtil.login(token);
-		}
 		SessionUtil.put(userId, session);
 		msgUtil.sendHistoryMsg(userId);
 		SocketUtil.broadcast("sys:欢迎小伙伴 " + userId + " 来到FuckChat");
