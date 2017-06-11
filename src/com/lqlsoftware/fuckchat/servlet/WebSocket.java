@@ -3,7 +3,6 @@ package com.lqlsoftware.fuckchat.servlet;
 import java.io.IOException;
 import java.sql.SQLException;
 
-import javax.transaction.TransactionRolledbackException;
 import javax.websocket.OnClose;
 import javax.websocket.OnError;
 import javax.websocket.OnMessage;
@@ -12,10 +11,7 @@ import javax.websocket.Session;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
 
-import com.lqlsoftware.fuckchat.utils.SessionUtil;
-import com.lqlsoftware.fuckchat.utils.SocketUtil;
-import com.lqlsoftware.fuckchat.utils.msgUtil;
-import com.lqlsoftware.fuckchat.utils.userUtil;
+import com.lqlsoftware.fuckchat.utils.*;
 
 @ServerEndpoint(value = "/chat/{userId}")
 public class WebSocket {
@@ -36,6 +32,7 @@ public class WebSocket {
 	@OnOpen
 	public void onOpen(@PathParam("userId") String userId, Session session)
 			throws IOException, InterruptedException, SQLException {
+        TokenManager TMR = new TokenManager();
 		if (SessionUtil.hasConnection(userId)) {
 			SocketUtil.sendTo("sys:You are current offline.", userId);
 			SessionUtil.remove(userId);

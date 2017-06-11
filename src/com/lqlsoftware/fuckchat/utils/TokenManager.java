@@ -1,25 +1,15 @@
-package com.lqlsoftware.XPM.utils;
+package com.lqlsoftware.fuckchat.utils;
 
 import java.util.UUID;
 
-import org.apache.log4j.Logger;
-import org.springframework.stereotype.Component;
-
+import com.lqlsoftware.fuckchat.utils.ITokenManager;
 import redis.clients.jedis.Jedis;
 
-/**
- * 通过 Redis 存储和验证 token 的实现类
- * @author ScienJus
- * @date 2015/7/31.
- */
-@Component
 public class TokenManager implements ITokenManager {
 	
 	private final Long sessionExpireTime = (long) 2592000 * 1000;
-	
-    private Jedis jedis;
 
-    private static Logger log = Logger.getLogger(TokenManager.class);
+    private Jedis jedis;
 
     private void setRedis() {
         this.jedis = RedisUtil.getJedis();
@@ -33,7 +23,6 @@ public class TokenManager implements ITokenManager {
 		jedis.set(userId, token);
 		jedis.expireAt(userId,sessionExpireTime);
 		jedis.close();
-        log.info("<-- create new Token id:" + userId + ";token:" + model.getAuthentication() + " -->");
         return model;
     }
     public TokenModel getToken (String authentication) {
@@ -62,13 +51,11 @@ public class TokenManager implements ITokenManager {
         // 如果验证成功，说明此用户进行了一次有效操作，延长 token 的过期时间
 		jedis.expireAt(model.getUserId (),sessionExpireTime);
 		jedis.close();
-        log.info("<-- ckeck Token id:" + model.getUserId() + ";token:" + model.getAuthentication() + " -->");
         return true;
     }
     public void deleteToken (String userId) {
     	setRedis();
         jedis.del (userId);
         jedis.close();
-        log.info("<-- delete Token id:" + userId + " -->");
     }
 }

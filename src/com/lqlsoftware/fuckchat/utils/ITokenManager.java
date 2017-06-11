@@ -1,5 +1,7 @@
-package com.lqlsoftware.XPM.utils;
+package com.lqlsoftware.fuckchat.utils;
 
+
+import com.lqlsoftware.fuckchat.utils.TokenModel;
 
 /**
  * 对 token 进行操作的接口
