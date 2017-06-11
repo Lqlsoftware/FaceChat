@@ -25,6 +25,9 @@ public class userUtil {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+        token = ItokenMange.createToken();
         return null;
     }
+
+
 }
