@@ -13,16 +13,17 @@ import javax.websocket.server.ServerEndpoint;
 
 import com.lqlsoftware.fuckchat.utils.*;
 
-@ServerEndpoint(value = "/chat/{userId}")
+@ServerEndpoint(value = "/chat/{token}")
 class WebSocket {
 	
 	// 收到信息
 	@OnMessage
-	public synchronized void onMessage(@PathParam("userId") String userId, String message,
+	public synchronized void onMessage(@PathParam("token") String token, String message,
 			Session session) throws IOException, InterruptedException {
+		TokenModel TM = new TokenManager().createToken(token);
 		try {
-			msgUtil.addMsg(userId, userId + " : " + message, "msg");
-			SocketUtil.broadcastWithout(userId + " : " + message, session);
+			msgUtil.addMsg(TM.getUserId(), TM.getUserId() + " : " + message, "msg");
+			SocketUtil.broadcastWithout(TM.getUserId() + " : " + message, session);
 		} catch (Exception e) {
 			session.getBasicRemote().sendText("sys:Invaild Input");
 		}
@@ -30,30 +31,37 @@ class WebSocket {
 
 	// 打开连接
 	@OnOpen
-	public void onOpen(@PathParam("userId") String userId, Session session)
+	public void onOpen(@PathParam("token") String token, Session session)
 			throws IOException, InterruptedException, SQLException {
-        TokenManager TMR = new TokenManager();
-		if (SessionUtil.hasConnection(userId)) {
-			SocketUtil.sendTo("sys:You are current offline.", userId);
-			SessionUtil.remove(userId);
+		if (token == null || token.equals("")) {
+			session.getBasicRemote().sendText("sys:Please relogin");
+			return;
 		}
-		SessionUtil.put(userId, session);
-		msgUtil.sendHistoryMsg(userId);
-		SocketUtil.broadcast("sys:欢迎小伙伴 " + userId + " 来到FuckChat");
-		System.out.println(userId + " online");
+		TokenManager TMR = new TokenManager();
+		TokenModel TM = TMR.getToken(token);
+		if (!TMR.checkToken(TM)) {
+			session.getBasicRemote().sendText("sys:Please relogin");
+			return;
+		}
+		SessionUtil.put(TM.getUserId(), session);
+		msgUtil.sendHistoryMsg(TM.getUserId());
+		SocketUtil.broadcast("sys:欢迎小伙伴 " + TM.getUserId() + " 来到FuckChat");
+		System.out.println(TM.getUserId() + " online");
 	}
 
 	// 关闭连接
 	@OnClose
-	public void onClose(@PathParam("userId") String userId)  throws IOException{
-		SocketUtil.sendTo("sys:You are current offline.", userId);
-		SessionUtil.remove(userId);
-		System.out.println(userId + " offine");
+	public void onClose(@PathParam("token") String token)  throws IOException{
+		TokenModel TM = new TokenManager().createToken(token);
+		SocketUtil.sendTo("sys:You are current offline.", TM.getUserId());
+		SessionUtil.remove(TM.getUserId());
+		System.out.println(TM.getUserId() + " offine");
 	}
 	
     @OnError
-    public void onError(@PathParam("userId") String userId,Throwable throwable) {
-		SessionUtil.remove(userId);
+    public void onError(@PathParam("token") String token,Throwable throwable) {
+		TokenModel TM = new TokenManager().createToken(token);
+		SessionUtil.remove(TM.getUserId());
         System.out.println(throwable.getMessage());
     }
 }

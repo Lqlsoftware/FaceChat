@@ -32,7 +32,7 @@
         <form onsubmit="login();return false;">
             <input id='id' type="text" class="text" onkeydown="if(event.keyCode==13)login();" placeholder="ID">
             <input id='pw' type="password" onfocus="this.value = '';" onkeydown="if(event.keyCode==13)login();" placeholder="Password">
-            <div class="submit"><input type="submit" onclick="login()" value="Sign in"></div>
+            <div class="submit"><input id="sm" type="submit" value="Sign in"></div>
         </form>
         <div class="clear"></div>
         <div class="new">

@@ -37,7 +37,7 @@ function initSocket() {
         alert("您的浏览器不支持websocket！");
         return false;
     }
-    webSocket = new WebSocket("ws://lqlsoftware.top/fuckchat/chat/" + id);
+    webSocket = new WebSocket("ws://lqlsoftware.top/fuckchat/chat/" + token);
 
     webSocket.onmessage = function(res) {
         var a = res.data;

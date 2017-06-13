@@ -10,11 +10,19 @@ document.ontouchmove = function(e) {
     e.preventDefault();
 }
 
-function login() {
+$('#sm').click(function() {
     if ($("#id").val() != '' && $("#pw").val() != '') {
         $.ajax({
-            data:''
-        })
-
+            type: "POST",
+            url: "/login",
+            data: {username:$("#id").val(), password:$("#pw").val()},
+            dataType: "json",
+            success: function(data){
+                self.location.href = "chat.html?token=" + data.get('token');
+            },
+            error: function (data) {
+                alert(data.get('errMsg'));
+            }
+        });
     }
-}
+});

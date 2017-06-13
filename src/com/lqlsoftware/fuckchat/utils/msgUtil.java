@@ -1,6 +1,8 @@
 package com.lqlsoftware.fuckchat.utils;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,6 +11,9 @@ import java.util.Date;
 
 import com.alibaba.fastjson.JSONObject;
 import com.lqlsoftware.fuckchat.dao.DBManager;
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
+
+import javax.servlet.http.HttpServletRequest;
 
 public class msgUtil {
 	
@@ -57,5 +62,11 @@ public class msgUtil {
 		msg.put("errMsg", errMsg);
 		return msg;
 	}
+
+	public static JSONObject getRequestObject(HttpServletRequest request) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(request.getInputStream()));
+        String res = br.readLine();
+        return JSONObject.parseObject(res);
+    }
 	
 }

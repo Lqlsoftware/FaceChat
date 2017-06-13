@@ -27,8 +27,9 @@ public class LoginServlet extends HttpServlet {
 		response.setHeader("content-type","text/html;charset=UTF-8");
 		
 		// 获取页面数据
-		String username = request.getParameter("username");
-		String password = request.getParameter("password");
+        JSONObject res = msgUtil.getRequestObject(request);
+		String username = res.getString("username");
+		String password = res.getString("password");
 
         String token = userUtil.login(username, password);
 
