@@ -1,6 +1,6 @@
 var webSocket = null;
 var tryTime = 0;
-var id = GetQueryString('id');
+var token = GetQueryString('token');
 var img = null;
 
 function sendtext() {
