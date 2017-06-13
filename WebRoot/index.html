@@ -17,11 +17,31 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link href="css/style.css" rel='stylesheet' type='text/css'>
+    <script src="js/app.js"></script>
+    <!--webfonts-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!--//webfonts-->
 </head>
 
 <body>
-    <script src="js/main.js"></script>
+    <div class="app-location">
+        <h2>Welcome to FuckChat</h2>
+        <div class="line"><span></span></div>
+        <div class="location"><img src="images/fuckchat.png" class="img-responsive" alt="" /></div>
+        <form onsubmit="login();return false;">
+            <input id='id' type="text" class="text" onkeydown="if(event.keyCode==13)login();" placeholder="ID">
+            <input type="password" onfocus="this.value = '';" onkeydown="if(event.keyCode==13)login();" placeholder="Password">
+            <div class="submit"><input type="submit" onclick="login()" value="Sign in"></div>
+        </form>
+        <div class="clear"></div>
+        <div class="new">
+            <!--
+                <h3><a href="#">Forgot password ?</a></h3>
+                <h4><a href="#">New here ? Sign Up</a></h4>
+                -->
+            <div class="clear"></div>
+        </div>
+    </div>
 </body>
 
 </html>

@@ -1,1 +1,108 @@
-﻿eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('Y.1s("<u 7=\\"27\\"><1e 7=\\"5\\" 4=\\"5-1W\\"><\\/1e><\\/u><u 4=\\"m-11\\"><m 4=\\"14\\" 7=\\"1V\\" z=\\"O\\" y=\\"6.1U()\\" q=\\"图\\"><17 4=\\"m\\" 7=\\"F\\" 1T=\\"13==1f.1S&&(S(),1f.1R())\\"><\\/17><m z=\\"O\\" 4=\\"1n\\" y=\\"S()\\" q=\\"1Q\\"><\\/u><U 7=\\"Z\\" V=\\"J:v\\" 1P=\\"1O\\" 1p=\\"1M://1a.o/1c/1L\\" 1K=\\"T\\" 1J=\\"1I/U-1h\\"><m z=\\"1H\\" 1B=\\"14/*,k/1A,k/1z,k/1y\\" 7=\\"6\\" W=\\"6\\" V=\\"J:v\\"> <m z=\\"v\\" q=\\"\\" 7=\\"L\\" W=\\"L\\"><\\/U><X 7=\\"T\\" V=\\"J:v\\" W=\\"T\\"><\\/X>\\n");8 f=h;8 s=0;8 7=16(\'7\');8 6=h;e S(){9(f!=h&&f.1w==1){8 l=$(\'#5\').K(\'3:M\');$(\'#5\').g(\'<3 4="A">\'+F.q+\'</3>\');8 a=$(\'#5\').K(\'3:M\');a.C().o=l.C().o+l.j;f.1n(F.q);F.q="";R()}i{$(\'#5\').g(\'<3 4="p">1r 1N 1q.</3>\')}}e 16(a){8 b=t G("(^|&)"+a+"=([^&]*)(&|$)");8 r=x.1t.1u.1v(1).H(b);9(r!=h)N 1x(r[2]);N h}e R(){8 a=$(\'#5\'),1m=a.K(\'3:M\');a.1l(1m.C().o-a.C().o+a.1l())}e I(){9(!x.1i){1C("您的浏览器不支持1D！");N 1E}f=t 1i("1F://1a.o/1c/5/"+7);f.1G=e(c){8 a=c.1h;8 d=t G("^p:.*$");9(a.H(d)!=h){8 b=a.D(\'p:\');$(\'#5\').g(\'<3 4="p">\'+b[1]+\'</3>\')}i 9(a.H(t G("^.*:6.*$"))!=h){8 b=a.D(\':6\');9(b[0]==7)$(\'#5\').g(\'<3 4="A"><6 4="6" B=\'+b[1]+\'></3>\');i $(\'#5\').g(\'<3 4="Q">\'+b[0]+\':<19><6 4="6" B=\'+b[1]+\'></3>\')}i 9(a.H(t G("^.*:18.*$"))!=h){8 b=a.D(\':18\');9(b[0]==7)$(\'#5\').g(\'<3 4="A"><k j="E%" 15="E%" y="1o.1k()"><1g B=\'+b[1]+\'></k></3>\');i $(\'#5\').g(\'<3 4="Q">\'+b[0]+\':<19><k j="E%" 15="E%" y="1o.1k()"><1g B=\'+b[1]+\'></k></3>\')}i{8 b=a.D(\' : \');9(b[0]==7)$(\'#5\').g(\'<3 4="A"><w 4="1d"></w>\'+b[1]+\'</3>\');i $(\'#5\').g(\'<3 4="Q"><w 4="1d"></w>\'+b[0]+\' : \'+b[1]+\'</3>\')}R()};f.12=e(a){1b.1j(a)};f.1X=e(a){1b.1j(a)};f.1Y=e(){9(s<10){9(s==0)$(\'#5\').g(\'<3 4="p">1Z 20...</3>\');21(e(){f=h;s++;I()},22)}i{s=0}};f.12=e(){$(\'#5\').g(\'<3 4="p">23 24!</3>\')}}$(Y).25(e(){I();6=$("#6");$(\'#5\').26;$(\'#L\').P(7);$("28").j($(x).j());$("#5").j($(x).j()-$(".m-11").j()-29);6.2a(e(){9(6.P()!=\'\')$("#Z").O();6.P("")})});',62,135,'|||li|class|chat|img|id|var|if|||||function|webSocket|append|null|else|height|video||input||top|sys|value||tryTime|new|div|hidden|span|window|onclick|type|me|src|offset|split|100|msg|RegExp|match|initSocket|visibility|find|userId|last|return|submit|val|to|scrollToLocation|sendtext|exec_target|form|style|name|iframe|document|submit_form||area|onerror||image|width|GetQueryString|textarea|vid|br|lqlsoftware|console|fuckchat|head|ul|event|source|data|WebSocket|log|play|scrollTop|scrollToContainer|send|this|action|offline|You|write|location|search|substr|readyState|unescape|ogg|mpg|mp4|accept|alert|websocket|false|ws|onmessage|file|multipart|enctype|target|imgUpload|http|are|post|method|SEND|preventDefault|keyCode|onkeydown|click|amsg|thread|onopen|onclose|Try|connecting|setTimeout|500|Connecting|Error|ready|empty|convo|body|40|change'.split('|'),0,{}))
+var webSocket = null;
+var tryTime = 0;
+var id = GetQueryString('id');
+var img = null;
+
+function sendtext() {
+    if (webSocket != null && webSocket.readyState == 1) {
+        var l = $('#chat').find('li:last');
+        $('#chat').append('<li class="me">' + msg.value + '</li>');
+        var ln = $('#chat').find('li:last');
+        ln.offset().top = l.offset().top + l.height;
+        webSocket.send(msg.value);
+        msg.value = "";
+        scrollToLocation();
+    } else {
+        $('#chat').append('<li class="sys">You are offline.</li>');
+    }
+}
+
+function GetQueryString(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return unescape(r[2]);
+    return null;
+}
+
+function scrollToLocation() {
+    var mainContainer = $('#chat'),
+        scrollToContainer = mainContainer.find('li:last');
+    mainContainer.scrollTop(
+        scrollToContainer.offset().top - mainContainer.offset().top + mainContainer.scrollTop()
+    );
+}
+
+function initSocket() {
+    if (!window.WebSocket) {
+        alert("您的浏览器不支持websocket！");
+        return false;
+    }
+    webSocket = new WebSocket("ws://lqlsoftware.top/fuckchat/chat/" + id);
+
+    webSocket.onmessage = function(res) {
+        var a = res.data;
+        var reg = new RegExp("^sys:.*$");
+        // if (typeof a == "string") {
+        if (a.match(reg) != null) {
+            var b = a.split('sys:');
+            $('#chat').append('<li class="sys">' + b[1] + '</li>');
+        } else if (a.match(new RegExp("^.*:img.*$")) != null) {
+            var b = a.split(':img');
+            if (b[0] == id)
+                $('#chat').append('<li class="me"><img class="img" src=' + b[1] + '></li>');
+            else
+                $('#chat').append('<li class="to">' + b[0] + ':<br><img class="img" src=' + b[1] + '></li>');
+        } else if (a.match(new RegExp("^.*:vid.*$")) != null) {
+            var b = a.split(':vid');
+            if (b[0] == id)
+                $('#chat').append('<li class="me"><video height="100%" width="100%" onclick="this.play()"><source src=' + b[1] + '></video></li>');
+            else
+                $('#chat').append('<li class="to">' + b[0] + ':<br><video height="100%" width="100%" onclick="this.play()"><source src=' + b[1] + '></video></li>');
+        } else {
+            var b = a.split(':');
+            if (b[0] == id)
+                $('#chat').append('<li class="me"><span class="head"></span>' + b[1] + '</li>');
+            else
+                $('#chat').append('<li class="to"><span class="head"></span>' + b[0] + ':' + b[1] + '</li>');
+        }
+        scrollToLocation();
+    };
+
+    webSocket.onerror = function(event) {
+        console.log(event);
+    };
+
+    webSocket.onopen = function(event) {
+        console.log(event);
+    };
+
+    webSocket.onclose = function() {
+        if (tryTime < 10) {
+            if (tryTime == 0) $('#chat').append('<li class="sys">Try connecting...</li>');
+            setTimeout(function() {
+                webSocket = null;
+                tryTime++;
+                initSocket();
+            }, 500);
+        } else {
+            tryTime = 0;
+        }
+    };
+
+    webSocket.onerror = function() {
+        $('#chat').append('<li class="sys">Connecting Error!</li>');
+    };
+}
+
+$(document).ready(function() {
+    initSocket();
+    img = $("#img");
+    $('#chat').empty;
+    $('#userId').val(id);
+    $("body").height($(window).height());
+    $("#chat").height($(window).height() - $(".input-area").height() - 40);
+    img.change(function() {
+        if (img.val() != '') $("#submit_form").submit();
+        img.val("");
+    });
+});

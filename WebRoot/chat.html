@@ -17,11 +17,25 @@
     <meta name="theme-color" content="#323542">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <script src='https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js'></script>
+    <script src='js/jquery.js'></script>
+    <script src='js/chat.js'></script>
 </head>
 
 <body>
-    <script src='js/chat.js'></script>
+    <div id="convo">
+        <ul id="chat" class="chat-thread">
+        </ul>
+    </div>
+    <div class="input-area">
+        <input class="image" id="amsg" type="submit" onclick="img.click();" value="图">
+        <textarea class="input" id="msg" onkeydown="if(event.keyCode==13){sendtext();event.preventDefault();}"></textarea>
+        <input type="submit" class="send" onclick="sendtext();" value="SEND">
+    </div>
+    <form id="submit_form" style="visibility:hidden" method="post" action="http://lqlsoftware.top/fuckchat/imgUpload" target="exec_target" enctype="multipart/form-data">
+        <input type="file" accept="image/*,video/mp4,video/mpg,video/ogg" id="img" name="img" style="visibility:hidden">
+        <input type="hidden" value="" id="userId" name="userId">
+    </form>
+    <iframe id="exec_target" style="visibility:hidden" name="exec_target"></iframe>
 </body>
 
 </html>
