@@ -3,7 +3,7 @@ package com.lqlsoftware.fuckchat.servlet;
 import com.alibaba.fastjson.JSONObject;
 import com.lqlsoftware.fuckchat.utils.TokenManager;
 import com.lqlsoftware.fuckchat.utils.TokenModel;
-import com.lqlsoftware.fuckchat.utils.userUtil;
+import com.lqlsoftware.fuckchat.utils.msgUtil;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,12 +12,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ *  @author Robin Lu
+ */
+
 @WebServlet(name = "TokenLoginServlet" ,urlPatterns = "/tokenLogin")
 public class TokenLoginServlet extends HttpServlet {
 
-	/**
-	 *  @author Robin Lu
-	 */
 	private static final long serialVersionUID = 1L;
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -32,20 +33,14 @@ public class TokenLoginServlet extends HttpServlet {
 
         // 登陆失败
         if (token == null || token.equals("")) {
-            JSONObject msg = new JSONObject();
-            msg.put("code", -1);
-            msg.put("errMsg", "Username/Password not match.");
-            response.getWriter().write(msg.toString());
+            response.getWriter().write(msgUtil.getErrorMsg("Authority Error!").toString());
             return;
         }
 
         TokenManager TMR = new TokenManager();
         TokenModel TM = TMR.getToken(token);
         if (!TMR.checkToken(TM)) {
-            JSONObject msg = new JSONObject();
-            msg.put("code", -1);
-            msg.put("errMsg", "Username/Password not match.");
-            response.getWriter().write(msg.toString());
+            response.getWriter().write(msgUtil.getErrorMsg("Authority Error!").toString());
             return;
         }
 

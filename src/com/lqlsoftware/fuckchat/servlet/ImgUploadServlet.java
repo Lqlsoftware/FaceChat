@@ -18,13 +18,14 @@ import com.lqlsoftware.fuckchat.utils.ImgCompress;
 import com.lqlsoftware.fuckchat.utils.SocketUtil;
 import com.lqlsoftware.fuckchat.utils.msgUtil;
 
+/**
+ *  @author Robin Lu
+ */
+
 @WebServlet(name = "ImgUploadServlet" ,urlPatterns = "/imgUpload")
 @MultipartConfig
 public class ImgUploadServlet extends HttpServlet {
 
-	/**
-	 *  @author Robin Lu
-	 */
 	private static final long serialVersionUID = 1L;
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)

@@ -11,7 +11,10 @@ document.ontouchmove = function(e) {
 }
 
 function login() {
-    if (document.getElementById("id").value != "") {
-        self.location.href = "chat.html?id=" + document.getElementById("id").value;
+    if ($("#id").val() != '' && $("#pw").val() != '') {
+        $.ajax({
+            data:''
+        })
+
     }
 }

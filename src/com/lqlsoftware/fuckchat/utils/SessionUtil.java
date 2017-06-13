@@ -11,7 +11,7 @@ import java.util.concurrent.ConcurrentHashMap;
  */  
 public class SessionUtil {  
   
-    public static Map<String, Session> clients = new ConcurrentHashMap<>();  
+    public static final Map<String, Session> clients = new ConcurrentHashMap<>();
   
     public static void put(String userId, Session session){  
         clients.put(userId, session);  
@@ -26,10 +26,8 @@ public class SessionUtil {
     }  
   
     /** 
-     * 判断是否有连接 
-     * @param relationId 
-     * @param userCode 
-     * @return 
+     * 判断是否有连接
+     * @param userId
      */  
     public static boolean hasConnection(String userId) {  
         return clients.containsKey(userId);  

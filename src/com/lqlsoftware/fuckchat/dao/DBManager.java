@@ -51,7 +51,7 @@ public class DBManager {
         DBManager.userPassword = userPassword;
     }
 
-    public synchronized static Connection getConnection() throws IOException {
+    public synchronized static Connection getConnection() {
         try {
             Class.forName(driver);
         } catch (ClassNotFoundException e1) {

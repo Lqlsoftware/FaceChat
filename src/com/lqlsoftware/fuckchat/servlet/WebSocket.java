@@ -14,7 +14,7 @@ import javax.websocket.server.ServerEndpoint;
 import com.lqlsoftware.fuckchat.utils.*;
 
 @ServerEndpoint(value = "/chat/{userId}")
-public class WebSocket {
+class WebSocket {
 	
 	// 收到信息
 	@OnMessage

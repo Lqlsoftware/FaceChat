@@ -8,7 +8,7 @@ import redis.clients.jedis.JedisPoolConfig;
  * redis 封装
  * @author robinlu
  */
-public final class RedisUtil {
+final class RedisUtil {
 
     //Redis服务器IP
     private static final String ADDR = "localhost";

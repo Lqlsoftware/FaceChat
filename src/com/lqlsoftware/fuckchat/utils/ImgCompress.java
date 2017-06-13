@@ -6,8 +6,8 @@ import java.awt.image.*;
 
 import javax.imageio.ImageIO;  
 /** 
- * Í¼Æ¬Ñ¹Ëõ´¦Àí 
- * @author ´ŞËØÇ¿ 
+ * å›¾ç‰‡å‹ç¼©å¤„ç† 
+ * @author å´”ç´ å¼º 
  */  
 public class ImgCompress {  
 	
@@ -37,9 +37,9 @@ public class ImgCompress {
 		this.newFilePath = newFilePath;
 	}
     /** 
-     * °´ÕÕ¿í¶È»¹ÊÇ¸ß¶È½øĞĞÑ¹Ëõ 
-     * @param w int ×î´ó¿í¶È 
-     * @param h int ×î´ó¸ß¶È 
+     * æŒ‰ç…§å®½åº¦è¿˜æ˜¯é«˜åº¦è¿›è¡Œå‹ç¼© 
+     * @param w int æœ€å¤§å®½åº¦ 
+     * @param h int æœ€å¤§é«˜åº¦ 
      */  
     public void resizeFix(int w, int h) throws IOException {  
         if (img.getWidth(null) / img.getHeight(null) > w / h) {  
@@ -49,33 +49,33 @@ public class ImgCompress {
         }  
     }  
     /** 
-     * ÒÔ¿í¶ÈÎª»ù×¼£¬µÈ±ÈÀı·ÅËõÍ¼Æ¬ 
-     * @param w int ĞÂ¿í¶È 
+     * ä»¥å®½åº¦ä¸ºåŸºå‡†ï¼Œç­‰æ¯”ä¾‹æ”¾ç¼©å›¾ç‰‡ 
+     * @param w int æ–°å®½åº¦ 
      */  
     public void resizeByWidth(int w) throws IOException {  
         int h = (int) (img.getHeight(null) * w / img.getWidth(null));  
         resize(w, h);  
     }  
     /** 
-     * ÒÔ¸ß¶ÈÎª»ù×¼£¬µÈ±ÈÀıËõ·ÅÍ¼Æ¬ 
-     * @param h int ĞÂ¸ß¶È 
+     * ä»¥é«˜åº¦ä¸ºåŸºå‡†ï¼Œç­‰æ¯”ä¾‹ç¼©æ”¾å›¾ç‰‡ 
+     * @param h int æ–°é«˜åº¦ 
      */  
     public void resizeByHeight(int h) throws IOException {  
         int w = (int) (img.getWidth(null) * h / img.getHeight(null));  
         resize(w, h);  
     }  
     /** 
-     * Ç¿ÖÆÑ¹Ëõ/·Å´óÍ¼Æ¬µ½¹Ì¶¨µÄ´óĞ¡ 
-     * @param w int ĞÂ¿í¶È 
-     * @param h int ĞÂ¸ß¶È 
+     * å¼ºåˆ¶å‹ç¼©/æ”¾å¤§å›¾ç‰‡åˆ°å›ºå®šçš„å¤§å° 
+     * @param w int æ–°å®½åº¦ 
+     * @param h int æ–°é«˜åº¦ 
      */  
     public void resize(int w, int h) throws IOException {  
     	if (img.equals(null)) {
     		return;
     	}
-        // SCALE_SMOOTH µÄËõÂÔËã·¨ Éú³ÉËõÂÔÍ¼Æ¬µÄÆ½»¬¶ÈµÄ ÓÅÏÈ¼¶±ÈËÙ¶È¸ß Éú³ÉµÄÍ¼Æ¬ÖÊÁ¿±È½ÏºÃ µ«ËÙ¶ÈÂı  
+        // SCALE_SMOOTH çš„ç¼©ç•¥ç®—æ³• ç”Ÿæˆç¼©ç•¥å›¾ç‰‡çš„å¹³æ»‘åº¦çš„ ä¼˜å…ˆçº§æ¯”é€Ÿåº¦é«˜ ç”Ÿæˆçš„å›¾ç‰‡è´¨é‡æ¯”è¾ƒå¥½ ä½†é€Ÿåº¦æ…¢  
         BufferedImage image = new BufferedImage(w, h,BufferedImage.TYPE_INT_RGB );   
-        image.getGraphics().drawImage(img, 0, 0, w, h, null); // »æÖÆËõĞ¡ºóµÄÍ¼  
+        image.getGraphics().drawImage(img, 0, 0, w, h, null); // ç»˜åˆ¶ç¼©å°åçš„å›¾  
         ImageIO.write(image, type, new File(newFilePath));  
     }  
 }

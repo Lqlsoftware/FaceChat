@@ -2,7 +2,6 @@ package com.lqlsoftware.fuckchat.utils;
 
 import java.util.UUID;
 
-import com.lqlsoftware.fuckchat.utils.ITokenManager;
 import redis.clients.jedis.Jedis;
 
 public class TokenManager implements ITokenManager {

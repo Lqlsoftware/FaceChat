@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
 
+import com.alibaba.fastjson.JSONObject;
 import com.lqlsoftware.fuckchat.dao.DBManager;
 
 public class msgUtil {
@@ -48,6 +49,13 @@ public class msgUtil {
 			ps.close();
 			conn.close();
 		}
+	}
+
+	public static JSONObject getErrorMsg(String errMsg) {
+		JSONObject msg = new JSONObject();
+		msg.put("code", -1);
+		msg.put("errMsg", errMsg);
+		return msg;
 	}
 	
 }

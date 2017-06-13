@@ -17,7 +17,7 @@ public class userUtil {
         String id = null;
         Connection conn = DBManager.getConnection();
 		PreparedStatement ps = null;
-        String sql = "SELECT * FROM user WHERE user_name=? AND password=?";
+        String sql = "SELECT * FROM user WHERE status=0 AND login_name=? AND password=?";
 		try {
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, username);
