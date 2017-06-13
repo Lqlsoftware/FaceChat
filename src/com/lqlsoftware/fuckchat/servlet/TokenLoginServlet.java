@@ -1,6 +1,8 @@
 package com.lqlsoftware.fuckchat.servlet;
 
 import com.alibaba.fastjson.JSONObject;
+import com.lqlsoftware.fuckchat.utils.TokenManager;
+import com.lqlsoftware.fuckchat.utils.TokenModel;
 import com.lqlsoftware.fuckchat.utils.userUtil;
 
 import javax.servlet.ServletException;
@@ -10,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "LoginServlet" ,urlPatterns = "/login")
+@WebServlet(name = "TokenLoginServlet" ,urlPatterns = "/tokenLogin")
 public class TokenLoginServlet extends HttpServlet {
 
 	/**
@@ -26,13 +28,20 @@ public class TokenLoginServlet extends HttpServlet {
 		response.setHeader("content-type","text/html;charset=UTF-8");
 		
 		// 获取页面数据
-		String username = request.getParameter("username");
-		String password = request.getParameter("password");
-
-        String token = userUtil.login();
+		String token = request.getParameter("token");
 
         // 登陆失败
         if (token == null || token.equals("")) {
+            JSONObject msg = new JSONObject();
+            msg.put("code", -1);
+            msg.put("errMsg", "Username/Password not match.");
+            response.getWriter().write(msg.toString());
+            return;
+        }
+
+        TokenManager TMR = new TokenManager();
+        TokenModel TM = TMR.getToken(token);
+        if (!TMR.checkToken(TM)) {
             JSONObject msg = new JSONObject();
             msg.put("code", -1);
             msg.put("errMsg", "Username/Password not match.");
