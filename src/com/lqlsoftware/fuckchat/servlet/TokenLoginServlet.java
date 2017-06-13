@@ -2,6 +2,7 @@ package com.lqlsoftware.fuckchat.servlet;
 
 import com.alibaba.fastjson.JSONObject;
 import com.lqlsoftware.fuckchat.utils.userUtil;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(name = "LoginServlet" ,urlPatterns = "/login")
-public class LoginServlet extends HttpServlet {
+public class TokenLoginServlet extends HttpServlet {
 
 	/**
 	 *  @author Robin Lu
