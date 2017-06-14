@@ -49,7 +49,6 @@ ol,
 nav ul,
 nav li,
 fieldset,
-form,
 label,
 legend,
 table,
@@ -240,8 +239,8 @@ body {
 }
 
 body a,
-form li,
-.submit input[type="submit"],
+li,
+.submit button,
 .new h3 a,
 .new h4 a {
     transition: 0.1s all;
@@ -260,7 +259,7 @@ body h1 {
 .app-location h2 {
     color: #fff;
     text-align: center;
-    padding: 1em 0;
+    padding: 0 0;
     font-size: 1.6em;
     font-weight: 300;
 }
@@ -290,10 +289,6 @@ body h1 {
     width: 20%;
 }
 
-form {
-    padding: 0% 1%;
-}
-
 
 /*-----*/
 
@@ -303,8 +298,8 @@ form {
 
 .app-location input[type="text"],
 .app-location input[type="password"] {
-    width: 81.2%;
-    padding: 1.1em 1em 1.1em 4em;
+    width: 75%;
+    padding: 1em 1em 1em 4em;
     color: #858282;
     font-size: 16px;
     outline: none;
@@ -316,7 +311,7 @@ form {
     -o-border-radius: 0.3em;
     -moz-border-radius: 0.3em;
     -webkit-border-radius: 0.3em;
-    margin: 0.7em 0;
+    margin: 0.5em 0.5em;
     background: url("../images/email.png") no-repeat 5% 50% #474a55;
 }
 
@@ -325,16 +320,16 @@ form {
 }
 
 .submit {
-    margin: 1em 0;
+    margin: 0.5em 0.5em;
 }
 
-.app-location input[type="submit"] {
+.app-location button {
     font-size: 20px;
     font-weight: 300;
     color: #0bd38a;
     cursor: pointer;
     outline: none;
-    padding: 17px 15px;
+    padding: 0.5em 15px;
     width: 100%;
     border-left: 3px solid #0bd38a;
     border-right: 3px solid #0bd38a;
@@ -348,7 +343,7 @@ form {
 }
 
 .new {
-    margin: 4em 0 1em 0;
+    margin: 1em 0 1em 0;
 }
 
 .new h3 {
@@ -403,7 +398,7 @@ form {
     }
     .app-location input[type="text"],
     .app-location input[type="password"] {
-        width: 82.2%;
+        width: 77%;
     }
 }
 
@@ -413,7 +408,7 @@ form {
     }
     .app-location input[type="text"],
     .app-location input[type="password"] {
-        width: 82.7%;
+        width: 77%;
     }
     .line span {
         position: absolute;
@@ -475,13 +470,13 @@ form {
     }
     .app-location input[type="text"],
     .app-location input[type="password"] {
-        width: 81%;
+        width: 75%;
     }
 }
 
 @media (max-width:480px) {
     .app-location {
-        width: 90%;
+        width: 80%;
         padding: 2em 1em 1em 1em;
     }
     .copy-right p {
@@ -491,13 +486,9 @@ form {
     .new h4 a {
         font-size: 0.9em;
     }
-    form {
-        width: 82%;
-        margin: 0 auto;
-    }
     .app-location input[type="text"],
     .app-location input[type="password"] {
-        width: 76.8%;
+        width: 70%;
         margin: 0.4em 0;
     }
 }
@@ -516,7 +507,7 @@ form {
     }
     .app-location input[type="text"],
     .app-location input[type="password"] {
-        width: 68%;
+        width: 65%;
         padding: 1em 1em 1em 4em;
         font-size: 15px;
         background: url("../images/email.png") no-repeat 5% 50% #474a55;
@@ -546,12 +537,8 @@ form {
     .submit {
         margin: 0.5em 0;
     }
-    .app-location input[type="submit"] {
+    .app-location button {
         font-size: 18px;
         padding: 11px 11px;
-    }
-    form {
-        width: 87%;
-        margin: 0 auto;
     }
 }
