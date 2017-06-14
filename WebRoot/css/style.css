@@ -240,7 +240,6 @@ body {
 
 body a,
 li,
-.submit button,
 .new h3 a,
 .new h4 a {
     transition: 0.1s all;
@@ -259,7 +258,7 @@ body h1 {
 .app-location h2 {
     color: #fff;
     text-align: center;
-    padding: 4em 0;
+    padding: 1em 0;
     font-size: 1.6em;
     font-weight: 300;
 }
@@ -319,18 +318,15 @@ body h1 {
     background: url("../images/password.png") no-repeat 5% 50% #474a55;
 }
 
-.submit {
-    margin: 0.5em 0.5em;
-}
-
 .app-location button {
     font-size: 20px;
     font-weight: 300;
     color: #0bd38a;
     cursor: pointer;
     outline: none;
-    padding: 0.5em 15px;
-    width: 100%;
+    margin-top: 0.4em;
+    padding: 0.4em 15px;
+    width: 75%;
     border-left: 3px solid #0bd38a;
     border-right: 3px solid #0bd38a;
     border-top: 3px solid #0bd38a;
@@ -533,9 +529,6 @@ body h1 {
         left: 35%;
         height: 1px;
         width: 29%;
-    }
-    .submit {
-        margin: 0.5em 0;
     }
     .app-location button {
         font-size: 18px;

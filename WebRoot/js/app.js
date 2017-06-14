@@ -10,6 +10,10 @@ document.ontouchmove = function(e) {
     e.preventDefault();
 }
 
+$(document).ready(function() {
+    $('#sm').width($('#id').width() + 45);
+});
+
 function login() {
     if ($("#id").val() != '' && $("#pw").val() != '') {
         $.ajax({
