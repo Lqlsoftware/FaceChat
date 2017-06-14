@@ -10,19 +10,20 @@ document.ontouchmove = function(e) {
     e.preventDefault();
 }
 
-$('#sm').click(function() {
+function login() {
     if ($("#id").val() != '' && $("#pw").val() != '') {
         $.ajax({
             type: "POST",
             url: "/login",
-            data: {username:$("#id").val(), password:$("#pw").val()},
+            data: { username: $("#id").val(), password: $("#pw").val() },
             dataType: "json",
-            success: function(data){
-                self.location.href = "chat.html?token=" + data.get('token');
+            success: function(data) {
+                var res = JSON.parse(data);
+                self.location.href = "chat.html?token=" + res.token;
             },
-            error: function (data) {
+            error: function(data) {
                 alert(data.get('errMsg'));
             }
         });
     }
-});
+}
