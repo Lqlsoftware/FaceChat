@@ -29,17 +29,13 @@
         <h2>Welcome to FuckChat</h2>
         <div class="line"><span></span></div>
         <div class="location"><img src="images/fuckchat.png" class="img-responsive" alt="" /></div>
-        <form onsubmit="login();return false;">
-            <input id='id' type="text" class="text" onkeydown="if(event.keyCode==13)login();" placeholder="ID">
-            <input id='pw' type="password" onfocus="this.value = '';" onkeydown="if(event.keyCode==13)login();" placeholder="Password">
-            <div class="submit"><input id="sm" type="submit" value="Sign in"></div>
-        </form>
+        <input id='id' type="text" class="text" placeholder="ID">
+        <input id='pw' type="password" placeholder="Password">
+        <div class="submit"><button id="sm" onclick="login();" value="Sign in">Sign in</button></div>
         <div class="clear"></div>
         <div class="new">
-            <!--
-                <h3><a href="#">Forgot password ?</a></h3>
-                <h4><a href="#">New here ? Sign Up</a></h4>
-                -->
+            <h3><a href="#">Forgot password ?</a></h3>
+            <h4><a href="#">New here ? Sign Up</a></h4>
             <div class="clear"></div>
         </div>
     </div>
