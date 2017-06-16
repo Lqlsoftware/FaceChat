@@ -1,7 +1,11 @@
 <component name="libraryTable">
   <library name="lib">
     <CLASSES>
+      <root url="jar://$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-pool2-2.4.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebRoot/WEB-INF/lib/jedis-2.7.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebRoot/WEB-INF/lib/fastjson-1.2.9.jar!/" />
       <root url="jar://$PROJECT_DIR$/WebRoot/WEB-INF/lib/javax.websocket-api-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebRoot/WEB-INF/lib/servlet-api.jar!/" />
       <root url="jar://$PROJECT_DIR$/WebRoot/WEB-INF/lib/mysql-connector-java-5.1.7-bin.jar!/" />
     </CLASSES>
     <JAVADOC />

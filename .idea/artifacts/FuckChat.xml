@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="FuckChat">
+    <output-path>$PROJECT_DIR$/out/artifacts/FuckChat</output-path>
+    <root id="root">
+      <element id="library" level="project" name="lib" />
+      <element id="module-output" name="FuckChat" />
+      <element id="dir-copy" path="$PROJECT_DIR$/WebRoot" />
+    </root>
+  </artifact>
+</component>
