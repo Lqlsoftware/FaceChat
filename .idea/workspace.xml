@@ -77,18 +77,18 @@
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <marker date="1497603436000" expanded="true" signature="58239:58483" ph="..." />
-                <marker date="1497603436000" expanded="true" signature="58239:58498" ph="..." />
-                <marker date="1497603436000" expanded="true" signature="58239:58825" ph="..." />
-                <marker date="1497603436000" expanded="true" signature="58239:58840" ph="..." />
-                <marker date="1497603436000" expanded="true" signature="58285:58463" ph="..." />
-                <marker date="1497603436000" expanded="true" signature="58325:58429" ph="..." />
-                <marker date="1497603436000" expanded="true" signature="58346:58407" ph="..." />
-                <marker date="1497603436000" expanded="true" signature="58546:58811" ph="..." />
-                <marker date="1497603436000" expanded="true" signature="58565:58796" ph="..." />
-                <marker date="1497603436000" expanded="true" signature="58598:58776" ph="..." />
-                <marker date="1497603436000" expanded="true" signature="58638:58742" ph="..." />
-                <marker date="1497603436000" expanded="true" signature="58659:58720" ph="..." />
+                <marker date="1497603441000" expanded="true" signature="58239:58483" ph="..." />
+                <marker date="1497603441000" expanded="true" signature="58239:58498" ph="..." />
+                <marker date="1497603441000" expanded="true" signature="58239:58825" ph="..." />
+                <marker date="1497603441000" expanded="true" signature="58239:58840" ph="..." />
+                <marker date="1497603441000" expanded="true" signature="58285:58463" ph="..." />
+                <marker date="1497603441000" expanded="true" signature="58325:58429" ph="..." />
+                <marker date="1497603441000" expanded="true" signature="58346:58407" ph="..." />
+                <marker date="1497603441000" expanded="true" signature="58546:58811" ph="..." />
+                <marker date="1497603441000" expanded="true" signature="58565:58796" ph="..." />
+                <marker date="1497603441000" expanded="true" signature="58598:58776" ph="..." />
+                <marker date="1497603441000" expanded="true" signature="58638:58742" ph="..." />
+                <marker date="1497603441000" expanded="true" signature="58659:58720" ph="..." />
               </folding>
             </state>
           </provider>
@@ -851,12 +851,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1497595014207</updated>
-      <workItem from="1497595015736" duration="2088000" />
+      <workItem from="1497595015736" duration="2155000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2088000" />
+    <option name="totallyTimeSpent" value="2155000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -880,10 +880,10 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="消息" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="运行" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="控制板" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="找到" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -941,18 +941,18 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1497603436000" expanded="true" signature="58239:58483" ph="..." />
-            <marker date="1497603436000" expanded="true" signature="58239:58498" ph="..." />
-            <marker date="1497603436000" expanded="true" signature="58239:58825" ph="..." />
-            <marker date="1497603436000" expanded="true" signature="58239:58840" ph="..." />
-            <marker date="1497603436000" expanded="true" signature="58285:58463" ph="..." />
-            <marker date="1497603436000" expanded="true" signature="58325:58429" ph="..." />
-            <marker date="1497603436000" expanded="true" signature="58346:58407" ph="..." />
-            <marker date="1497603436000" expanded="true" signature="58546:58811" ph="..." />
-            <marker date="1497603436000" expanded="true" signature="58565:58796" ph="..." />
-            <marker date="1497603436000" expanded="true" signature="58598:58776" ph="..." />
-            <marker date="1497603436000" expanded="true" signature="58638:58742" ph="..." />
-            <marker date="1497603436000" expanded="true" signature="58659:58720" ph="..." />
+            <marker date="1497603441000" expanded="true" signature="58239:58483" ph="..." />
+            <marker date="1497603441000" expanded="true" signature="58239:58498" ph="..." />
+            <marker date="1497603441000" expanded="true" signature="58239:58825" ph="..." />
+            <marker date="1497603441000" expanded="true" signature="58239:58840" ph="..." />
+            <marker date="1497603441000" expanded="true" signature="58285:58463" ph="..." />
+            <marker date="1497603441000" expanded="true" signature="58325:58429" ph="..." />
+            <marker date="1497603441000" expanded="true" signature="58346:58407" ph="..." />
+            <marker date="1497603441000" expanded="true" signature="58546:58811" ph="..." />
+            <marker date="1497603441000" expanded="true" signature="58565:58796" ph="..." />
+            <marker date="1497603441000" expanded="true" signature="58598:58776" ph="..." />
+            <marker date="1497603441000" expanded="true" signature="58638:58742" ph="..." />
+            <marker date="1497603441000" expanded="true" signature="58659:58720" ph="..." />
           </folding>
         </state>
       </provider>
