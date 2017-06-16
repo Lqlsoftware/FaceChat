@@ -40,10 +40,9 @@ public class LoginServlet extends HttpServlet {
         }
 
         JSONObject msg = new JSONObject();
-        JSONObject data = new JSONObject();
-        data.put("token", token);
         msg.put("code", 1);
-        msg.put("data", data);
+        msg.put("token", token);
+        msg.put("data", "");
         msg.put("errMsg", "");
         response.getWriter().write(msg.toString());
 	}
