@@ -26,7 +26,7 @@ public class userUtil {
             if (!rs.next()) {
                 return null;
             }
-            id = rs.getString("id");
+            id = rs.getString("user_name");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

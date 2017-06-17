@@ -25,11 +25,11 @@ public class LoginServlet extends HttpServlet {
 		// 设置传输数据格式
 		request.setCharacterEncoding("UTF-8");
 		response.setHeader("content-type","text/html;charset=UTF-8");
+        response.setHeader("Access-Control-Allow-Origin", "*");
 		
 		// 获取页面数据
-        JSONObject res = msgUtil.getRequestObject(request);
-		String username = res.getString("username");
-		String password = res.getString("password");
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
 
         String token = userUtil.login(username, password);
 
@@ -46,4 +46,9 @@ public class LoginServlet extends HttpServlet {
         msg.put("errMsg", "");
         response.getWriter().write(msg.toString());
 	}
+
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+	    doPost(request, response);
+    }
 }

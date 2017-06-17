@@ -14,13 +14,13 @@ import javax.websocket.server.ServerEndpoint;
 import com.lqlsoftware.fuckchat.utils.*;
 
 @ServerEndpoint(value = "/chat/{token}")
-class WebSocket {
+public class WebSocket {
 	
 	// 收到信息
 	@OnMessage
 	public synchronized void onMessage(@PathParam("token") String token, String message,
 			Session session) throws IOException, InterruptedException {
-		TokenModel TM = new TokenManager().createToken(token);
+		TokenModel TM = new TokenManager().getToken(token);
 		try {
 			msgUtil.addMsg(TM.getUserId(), TM.getUserId() + " : " + message, "msg");
 			SocketUtil.broadcastWithout(TM.getUserId() + " : " + message, session);
@@ -52,7 +52,7 @@ class WebSocket {
 	// 关闭连接
 	@OnClose
 	public void onClose(@PathParam("token") String token)  throws IOException{
-		TokenModel TM = new TokenManager().createToken(token);
+		TokenModel TM = new TokenManager().getToken(token);
 		SocketUtil.sendTo("sys:You are current offline.", TM.getUserId());
 		SessionUtil.remove(TM.getUserId());
 		System.out.println(TM.getUserId() + " offine");
@@ -60,7 +60,7 @@ class WebSocket {
 	
     @OnError
     public void onError(@PathParam("token") String token,Throwable throwable) {
-		TokenModel TM = new TokenManager().createToken(token);
+		TokenModel TM = new TokenManager().getToken(token);
 		SessionUtil.remove(TM.getUserId());
         System.out.println(throwable.getMessage());
     }

@@ -1,6 +1,5 @@
 package com.lqlsoftware.fuckchat.dao;
 
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -17,7 +16,7 @@ public class DBManager {
     private static String userName = "root";
 
     // 数据库的用户密码
-    private static String userPassword = "123456";
+    private static String userPassword = "Lqlluyuli123";
 
     public static String getDriver() {
         return driver;
