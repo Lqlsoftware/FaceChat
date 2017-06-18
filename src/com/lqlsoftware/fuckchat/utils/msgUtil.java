@@ -16,6 +16,19 @@ import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 import javax.servlet.http.HttpServletRequest;
 
 public class msgUtil {
+
+	public static String getMsg(String userId, String context, String type) {
+        JSONObject msg = new JSONObject();
+        JSONObject data = new JSONObject();
+        data.put("from", userId);
+        data.put("type", type);
+        data.put("context", context);
+        data.put("timestamp", new Date().getTime());
+        msg.put("data", data);
+        msg.put("code", 1);
+        msg.put("errMsg", "");
+        return msg.toString();
+    }
 	
 	public static void addMsg(String userId, String msg, String type) throws IOException, SQLException {
 		Connection conn = DBManager.getConnection();
@@ -46,7 +59,7 @@ public class msgUtil {
 			ps.setLong(1, new Date().getTime() - 180000);
 			rs = ps.executeQuery();
 			while (rs.next()) {
-				SocketUtil.sendTo(rs.getString("context"), userId);
+				SocketUtil.sendTo(msgUtil.getMsg(rs.getString("from_user"), rs.getString("context"), rs.getString("type")), userId);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

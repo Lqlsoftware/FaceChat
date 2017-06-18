@@ -32,5 +32,7 @@
     <orderEntry type="library" name="WebSocket-1.0" level="project" />
     <orderEntry type="library" name="Java EE 6-Java EE 6 (2)" level="project" />
     <orderEntry type="library" name="Java EE 6-Java EE 6 (3)" level="project" />
+    <orderEntry type="library" name="javax.servlet" level="project" />
+    <orderEntry type="library" name="jedis-2.7.0" level="project" />
   </component>
 </module>

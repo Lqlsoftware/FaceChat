@@ -75,8 +75,8 @@ public class ImgUploadServlet extends HttpServlet {
 					file = "imgs_s/" + file.substring(6);
 				}
 				try {
-					msgUtil.addMsg(userId, userId + ":imghttp://lqlsoftware.top/fuckchat/" + file, "img");
-					SocketUtil.broadcast(userId + ":imghttp://lqlsoftware.top/fuckchat/" + file);
+					msgUtil.addMsg(userId, "http://lqlsoftware.top/fuckchat/" + file, "img");
+					SocketUtil.broadcast(msgUtil.getMsg(userId, "http://lqlsoftware.top/fuckchat/" + file, "img"));
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}

@@ -22,10 +22,10 @@ public class WebSocket {
 			Session session) throws IOException, InterruptedException {
 		TokenModel TM = new TokenManager().getToken(token);
 		try {
-			msgUtil.addMsg(TM.getUserId(), TM.getUserId() + " : " + message, "msg");
-			SocketUtil.broadcastWithout(TM.getUserId() + " : " + message, session);
+			msgUtil.addMsg(TM.getUserId(), message, "text");
+			SocketUtil.broadcastWithout(msgUtil.getMsg(TM.getUserId(), message, "text"), session);
 		} catch (Exception e) {
-			session.getBasicRemote().sendText("sys:Invaild Input");
+			session.getBasicRemote().sendText(msgUtil.getMsg("system", "Invaild Input", "text"));
 		}
 	}
 
@@ -34,18 +34,18 @@ public class WebSocket {
 	public void onOpen(@PathParam("token") String token, Session session)
 			throws IOException, InterruptedException, SQLException {
 		if (token == null || token.equals("")) {
-			session.getBasicRemote().sendText("sys:Please relogin");
+			session.getBasicRemote().sendText(msgUtil.getMsg("system", "Please relogin", "text"));
 			return;
 		}
 		TokenManager TMR = new TokenManager();
 		TokenModel TM = TMR.getToken(token);
 		if (!TMR.checkToken(TM)) {
-			session.getBasicRemote().sendText("sys:Please relogin");
+			session.getBasicRemote().sendText(msgUtil.getMsg("system", "Please relogin", "text"));
 			return;
 		}
 		SessionUtil.put(TM.getUserId(), session);
 		msgUtil.sendHistoryMsg(TM.getUserId());
-		SocketUtil.broadcast("sys:欢迎小伙伴 " + TM.getUserId() + " 来到FuckChat");
+		SocketUtil.broadcast(msgUtil.getMsg("system", "欢迎小伙伴 " + TM.getUserId() + " 来到FuckChat", "text"));
 		System.out.println(TM.getUserId() + " online");
 	}
 
@@ -53,7 +53,7 @@ public class WebSocket {
 	@OnClose
 	public void onClose(@PathParam("token") String token)  throws IOException{
 		TokenModel TM = new TokenManager().getToken(token);
-		SocketUtil.sendTo("sys:You are current offline.", TM.getUserId());
+		SocketUtil.sendTo(msgUtil.getMsg("system", "You are current offline.", "text"), TM.getUserId());
 		SessionUtil.remove(TM.getUserId());
 		System.out.println(TM.getUserId() + " offine");
 	}
