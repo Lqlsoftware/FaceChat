@@ -29,6 +29,20 @@ public class msgUtil {
         msg.put("errMsg", "");
         return msg.toString();
     }
+
+    public static String getSysMsg(int code, String context, String errMsg) {
+        JSONObject msg = new JSONObject();
+        JSONObject data = new JSONObject();
+        data.put("from", "system");
+        data.put("type", "text");
+        data.put("context", context);
+        data.put("timestamp", new Date().getTime());
+        msg.put("data", data);
+        msg.put("code", code);
+        msg.put("errMsg", errMsg);
+        return msg.toString();
+    }
+
 	
 	public static void addMsg(String userId, String msg, String type) throws IOException, SQLException {
 		Connection conn = DBManager.getConnection();
@@ -70,16 +84,9 @@ public class msgUtil {
 	}
 
 	public static JSONObject getErrorMsg(String errMsg) {
-		JSONObject msg = new JSONObject();
-		msg.put("code", -1);
-		msg.put("errMsg", errMsg);
-		return msg;
-	}
-
-	public static JSONObject getRequestObject(HttpServletRequest request) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(request.getInputStream()));
-        String res = br.readLine();
-        return JSONObject.parseObject(res);
+        JSONObject msg = new JSONObject();
+        msg.put("code", -1);
+        msg.put("errMsg", errMsg);
+        return msg;
     }
-	
 }

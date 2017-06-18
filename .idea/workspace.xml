@@ -7,12 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4fe67bc1-4c03-4393-9a6a-76caed0f3b1d" name="默认的" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/javax_servlet.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/jedis_2_7_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/FuckChat.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/FuckChat.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FuckChat.iml" afterPath="$PROJECT_DIR$/FuckChat.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/servlet/ImgUploadServlet.java" afterPath="$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/servlet/ImgUploadServlet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/servlet/WebSocket.java" afterPath="$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/servlet/WebSocket.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/utils/msgUtil.java" afterPath="$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/utils/msgUtil.java" />
     </list>
@@ -27,88 +21,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="modules.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
+      <file leaf-file-name="WebSocket.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/servlet/WebSocket.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vcs.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1497779592000" expanded="true" signature="69458:69483" ph="..." />
-                <marker date="1497779592000" expanded="true" signature="69458:69505" ph="..." />
-                <marker date="1497779592000" expanded="true" signature="69458:69539" ph="..." />
-                <marker date="1497779592000" expanded="true" signature="69458:69559" ph="..." />
-                <marker date="1497779592000" expanded="true" signature="69458:69574" ph="..." />
-                <marker date="1497779592000" expanded="true" signature="69458:70601" ph="..." />
-                <marker date="1497779592000" expanded="true" signature="69458:70616" ph="..." />
-                <marker date="1497779592000" expanded="true" signature="69609:69915" ph="..." />
-                <marker date="1497779592000" expanded="true" signature="69628:69900" ph="..." />
-                <marker date="1497779592000" expanded="true" signature="69702:69880" ph="..." />
-                <marker date="1497779592000" expanded="true" signature="69742:69846" ph="..." />
-                <marker date="1497779592000" expanded="true" signature="69763:69824" ph="..." />
-                <marker date="1497779592000" expanded="true" signature="69967:70274" ph="..." />
-                <marker date="1497779592000" expanded="true" signature="69986:70259" ph="..." />
-                <marker date="1497779592000" expanded="true" signature="70061:70239" ph="..." />
-                <marker date="1497779592000" expanded="true" signature="70101:70205" ph="..." />
-                <marker date="1497779592000" expanded="true" signature="70122:70183" ph="..." />
-                <marker date="1497779592000" expanded="true" signature="70322:70587" ph="..." />
-                <marker date="1497779592000" expanded="true" signature="70341:70572" ph="..." />
-                <marker date="1497779592000" expanded="true" signature="70374:70552" ph="..." />
-                <marker date="1497779592000" expanded="true" signature="70414:70518" ph="..." />
-                <marker date="1497779592000" expanded="true" signature="70435:70496" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginServlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/servlet/LoginServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="22" column="16" lean-forward="false" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ImgUploadServlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/servlet/ImgUploadServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="518">
-              <caret line="77" column="84" lean-forward="false" selection-start-line="77" selection-start-column="84" selection-end-line="77" selection-end-column="84" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TokenLoginServlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/servlet/TokenLoginServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+            <state relative-caret-position="685">
+              <caret line="57" column="55" lean-forward="true" selection-start-line="57" selection-start-column="55" selection-end-line="57" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -117,42 +34,12 @@
       <file leaf-file-name="msgUtil.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/utils/msgUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="735">
-              <caret line="62" column="13" lean-forward="true" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
+            <state relative-caret-position="-111">
+              <caret line="41" column="32" lean-forward="false" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
               <folding>
-                <marker date="1497779592000" expanded="true" signature="1144:1209" ph="INSERT INTO msg... " />
-                <marker date="1497779592000" expanded="true" signature="1708:1743" ph="SELECT * FRO... msg" />
+                <marker date="1497779863000" expanded="true" signature="1606:1671" ph="INSERT INTO msg... " />
+                <marker date="1497779863000" expanded="true" signature="2170:2205" ph="SELECT * FRO... msg" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SessionUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/utils/SessionUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SocketUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/utils/SocketUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WebSocket.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/servlet/WebSocket.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -172,9 +59,9 @@
       <list>
         <option value="$PROJECT_DIR$/.idea/artifacts/FuckChat.xml" />
         <option value="$PROJECT_DIR$/WebRoot/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/servlet/WebSocket.java" />
         <option value="$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/servlet/ImgUploadServlet.java" />
         <option value="$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/utils/msgUtil.java" />
+        <option value="$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/servlet/WebSocket.java" />
       </list>
     </option>
   </component>
@@ -826,12 +713,12 @@
       <updated>1497595014207</updated>
       <workItem from="1497595015736" duration="2155000" />
       <workItem from="1497635022440" duration="8000" />
-      <workItem from="1497778156207" duration="1452000" />
+      <workItem from="1497778156207" duration="1829000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3615000" />
+    <option name="totallyTimeSpent" value="3992000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -919,28 +806,28 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1497779592000" expanded="true" signature="69458:69483" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="69458:69505" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="69458:69539" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="69458:69559" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="69458:69574" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="69458:70601" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="69458:70616" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="69609:69915" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="69628:69900" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="69702:69880" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="69742:69846" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="69763:69824" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="69967:70274" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="69986:70259" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="70061:70239" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="70101:70205" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="70122:70183" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="70322:70587" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="70341:70572" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="70374:70552" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="70414:70518" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="70435:70496" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="64643:64668" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="64643:64690" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="64643:64724" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="64643:64744" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="64643:64759" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="64643:65786" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="64643:65801" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="64794:65100" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="64813:65085" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="64887:65065" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="64927:65031" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="64948:65009" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="65152:65459" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="65171:65444" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="65246:65424" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="65286:65390" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="65307:65368" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="65507:65772" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="65526:65757" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="65559:65737" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="65599:65703" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="65620:65681" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1002,28 +889,28 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1497779592000" expanded="true" signature="69458:69483" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="69458:69505" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="69458:69539" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="69458:69559" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="69458:69574" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="69458:70601" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="69458:70616" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="69609:69915" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="69628:69900" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="69702:69880" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="69742:69846" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="69763:69824" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="69967:70274" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="69986:70259" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="70061:70239" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="70101:70205" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="70122:70183" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="70322:70587" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="70341:70572" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="70374:70552" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="70414:70518" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="70435:70496" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="64643:64668" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="64643:64690" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="64643:64724" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="64643:64744" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="64643:64759" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="64643:65786" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="64643:65801" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="64794:65100" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="64813:65085" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="64887:65065" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="64927:65031" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="64948:65009" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="65152:65459" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="65171:65444" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="65246:65424" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="65286:65390" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="65307:65368" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="65507:65772" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="65526:65757" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="65559:65737" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="65599:65703" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="65620:65681" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1087,28 +974,28 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1497779592000" expanded="true" signature="69458:69483" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="69458:69505" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="69458:69539" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="69458:69559" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="69458:69574" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="69458:70601" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="69458:70616" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="69609:69915" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="69628:69900" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="69702:69880" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="69742:69846" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="69763:69824" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="69967:70274" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="69986:70259" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="70061:70239" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="70101:70205" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="70122:70183" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="70322:70587" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="70341:70572" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="70374:70552" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="70414:70518" ph="..." />
-            <marker date="1497779592000" expanded="true" signature="70435:70496" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="64643:64668" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="64643:64690" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="64643:64724" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="64643:64744" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="64643:64759" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="64643:65786" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="64643:65801" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="64794:65100" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="64813:65085" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="64887:65065" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="64927:65031" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="64948:65009" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="65152:65459" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="65171:65444" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="65246:65424" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="65286:65390" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="65307:65368" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="65507:65772" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="65526:65757" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="65559:65737" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="65599:65703" ph="..." />
+            <marker date="1497779991000" expanded="true" signature="65620:65681" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1160,21 +1047,71 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/utils/userUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <marker date="1497687447000" expanded="true" signature="557:622" ph="SELECT * FRO... user" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/utils/TokenManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/utils/TokenModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/utils/RedisUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="10" column="12" lean-forward="false" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/utils/ImgCompress.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/utils/ITokenManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="10" lean-forward="false" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/servlet/WebSocket.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state relative-caret-position="685">
+          <caret line="57" column="55" lean-forward="true" selection-start-line="57" selection-start-column="55" selection-end-line="57" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/utils/msgUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="62" column="13" lean-forward="true" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
+        <state relative-caret-position="-111">
+          <caret line="41" column="32" lean-forward="false" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
           <folding>
-            <marker date="1497779592000" expanded="true" signature="1144:1209" ph="INSERT INTO msg... " />
-            <marker date="1497779592000" expanded="true" signature="1708:1743" ph="SELECT * FRO... msg" />
+            <marker date="1497779863000" expanded="true" signature="1606:1671" ph="INSERT INTO msg... " />
+            <marker date="1497779863000" expanded="true" signature="2170:2205" ph="SELECT * FRO... msg" />
           </folding>
         </state>
       </provider>

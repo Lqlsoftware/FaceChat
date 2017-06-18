@@ -25,7 +25,7 @@ public class WebSocket {
 			msgUtil.addMsg(TM.getUserId(), message, "text");
 			SocketUtil.broadcastWithout(msgUtil.getMsg(TM.getUserId(), message, "text"), session);
 		} catch (Exception e) {
-			session.getBasicRemote().sendText(msgUtil.getMsg("system", "Invaild Input", "text"));
+			session.getBasicRemote().sendText(msgUtil.getSysMsg(-1, "Invaild Input", ""));
 		}
 	}
 
@@ -34,18 +34,18 @@ public class WebSocket {
 	public void onOpen(@PathParam("token") String token, Session session)
 			throws IOException, InterruptedException, SQLException {
 		if (token == null || token.equals("")) {
-			session.getBasicRemote().sendText(msgUtil.getMsg("system", "Please relogin", "text"));
+			session.getBasicRemote().sendText(msgUtil.getSysMsg(-1, "Please relogin", ""));
 			return;
 		}
 		TokenManager TMR = new TokenManager();
 		TokenModel TM = TMR.getToken(token);
 		if (!TMR.checkToken(TM)) {
-			session.getBasicRemote().sendText(msgUtil.getMsg("system", "Please relogin", "text"));
+			session.getBasicRemote().sendText(msgUtil.getSysMsg(-1, "Please relogin", ""));
 			return;
 		}
 		SessionUtil.put(TM.getUserId(), session);
 		msgUtil.sendHistoryMsg(TM.getUserId());
-		SocketUtil.broadcast(msgUtil.getMsg("system", "欢迎小伙伴 " + TM.getUserId() + " 来到FuckChat", "text"));
+		SocketUtil.broadcast(msgUtil.getSysMsg(-1, "欢迎小伙伴 " + TM.getUserId() + " 来到FuckChat", ""));
 		System.out.println(TM.getUserId() + " online");
 	}
 
@@ -53,7 +53,7 @@ public class WebSocket {
 	@OnClose
 	public void onClose(@PathParam("token") String token)  throws IOException{
 		TokenModel TM = new TokenManager().getToken(token);
-		SocketUtil.sendTo(msgUtil.getMsg("system", "You are current offline.", "text"), TM.getUserId());
+		SocketUtil.sendTo(msgUtil.getSysMsg(-1, "You are current offline.", ""), TM.getUserId());
 		SessionUtil.remove(TM.getUserId());
 		System.out.println(TM.getUserId() + " offine");
 	}
