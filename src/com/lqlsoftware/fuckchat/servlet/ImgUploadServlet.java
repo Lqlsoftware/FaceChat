@@ -50,10 +50,13 @@ public class ImgUploadServlet extends HttpServlet {
 				// .quicktime好像safari播放不了
 				file = "vids/" + new Date().getTime() + ".mp4";
 				String path = root  + file;
+				File dir = new File(root + "vids/");
+				if (!dir.exists())
+				    dir.mkdirs();
 				part.write(path);
 				try {
-					msgUtil.addMsg(userId, userId + ":vidhttp://lqlsoftware.top/fuckchat/" + file, "vid");
-					SocketUtil.broadcast(userId + ":vidhttp://lqlsoftware.top/fuckchat/" + file);
+					msgUtil.addMsg(userId, file, "vid");
+					SocketUtil.broadcast(msgUtil.getMsg(userId, file, "vid"));
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
@@ -62,6 +65,12 @@ public class ImgUploadServlet extends HttpServlet {
 				// 存入服务器
 				file = "imgs/" + new Date().getTime() + "." + type.substring(type.indexOf('/')+1);
 				String path = root  + file;
+                File dir = new File(root + "imgs/");
+                if (!dir.exists())
+                    dir.mkdirs();
+                dir = new File(root + "imgs_s/");
+                if (!dir.exists())
+                    dir.mkdirs();
 				part.write(path);
 				if (!type.substring(type.indexOf('/')+1).equals("gif") && !type.substring(type.indexOf('/')+1).equals("GIF")) {
 					File img = new File(path);
@@ -75,8 +84,8 @@ public class ImgUploadServlet extends HttpServlet {
 					file = "imgs_s/" + file.substring(6);
 				}
 				try {
-					msgUtil.addMsg(userId, "http://lqlsoftware.top/fuckchat/" + file, "img");
-					SocketUtil.broadcast(msgUtil.getMsg(userId, "http://lqlsoftware.top/fuckchat/" + file, "img"));
+					msgUtil.addMsg(userId, file, "img");
+					SocketUtil.broadcast(msgUtil.getMsg(userId, file, "img"));
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}

@@ -11,13 +11,6 @@
         </webroots>
       </configuration>
     </facet>
-    <facet type="javaeeApplication" name="javaEEApplication">
-      <configuration>
-        <descriptors>
-          <deploymentDescriptor name="application.xml" url="file://$MODULE_DIR$/META-INF/application.xml" />
-        </descriptors>
-      </configuration>
-    </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
@@ -26,13 +19,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
-    <orderEntry type="library" name="fastjson-1.2.9" level="project" />
-    <orderEntry type="library" name="commons-pool2-2.4.2" level="project" />
-    <orderEntry type="library" name="WebSocket-1.0" level="project" />
-    <orderEntry type="library" name="Java EE 6-Java EE 6 (2)" level="project" />
-    <orderEntry type="library" name="Java EE 6-Java EE 6 (3)" level="project" />
-    <orderEntry type="library" name="javax.servlet" level="project" />
-    <orderEntry type="library" name="jedis-2.7.0" level="project" />
+    <orderEntry type="library" name="lib" level="project" />
   </component>
 </module>

@@ -7,8 +7,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4fe67bc1-4c03-4393-9a6a-76caed0f3b1d" name="默认的" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/servlet/WebSocket.java" afterPath="$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/servlet/WebSocket.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/utils/msgUtil.java" afterPath="$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/utils/msgUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/servlet-api.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/servlet_api.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/javax.servlet.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FuckChat/com/lqlsoftware/fuckchat/dao/DBManager.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FuckChat/com/lqlsoftware/fuckchat/servlet/ImgUploadServlet.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FuckChat/com/lqlsoftware/fuckchat/servlet/LoginServlet.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FuckChat/com/lqlsoftware/fuckchat/servlet/TokenLoginServlet.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FuckChat/com/lqlsoftware/fuckchat/servlet/WebSocket.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FuckChat/com/lqlsoftware/fuckchat/utils/ITokenManager.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FuckChat/com/lqlsoftware/fuckchat/utils/ImgCompress.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FuckChat/com/lqlsoftware/fuckchat/utils/RedisUtil.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FuckChat/com/lqlsoftware/fuckchat/utils/SessionUtil.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FuckChat/com/lqlsoftware/fuckchat/utils/SocketUtil.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FuckChat/com/lqlsoftware/fuckchat/utils/TokenManager.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FuckChat/com/lqlsoftware/fuckchat/utils/TokenModel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FuckChat/com/lqlsoftware/fuckchat/utils/msgUtil.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FuckChat/com/lqlsoftware/fuckchat/utils/userUtil.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/FuckChat.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/FuckChat.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FuckChat.iml" afterPath="$PROJECT_DIR$/FuckChat.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/chat.js" afterPath="$PROJECT_DIR$/web/js/chat.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,22 +43,74 @@
       <file leaf-file-name="WebSocket.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/servlet/WebSocket.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="685">
-              <caret line="57" column="55" lean-forward="true" selection-start-line="57" selection-start-column="55" selection-end-line="57" selection-end-column="55" />
+            <state relative-caret-position="690">
+              <caret line="57" column="55" lean-forward="false" selection-start-line="57" selection-start-column="55" selection-end-line="57" selection-end-column="55" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="msgUtil.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="msgUtil.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/utils/msgUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-111">
-              <caret line="41" column="32" lean-forward="false" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
+            <state relative-caret-position="675">
+              <caret line="58" column="32" lean-forward="false" selection-start-line="58" selection-start-column="32" selection-end-line="58" selection-end-column="32" />
               <folding>
                 <marker date="1497779863000" expanded="true" signature="1606:1671" ph="INSERT INTO msg... " />
                 <marker date="1497779863000" expanded="true" signature="2170:2205" ph="SELECT * FRO... msg" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/js/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/servlet/LoginServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="24" column="19" lean-forward="false" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FuckChat.iml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FuckChat.iml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="39" lean-forward="false" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="chat.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/js/chat.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="659">
+              <caret line="59" column="141" lean-forward="false" selection-start-line="59" selection-start-column="141" selection-end-line="59" selection-end-column="142" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -62,6 +133,8 @@
         <option value="$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/servlet/ImgUploadServlet.java" />
         <option value="$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/utils/msgUtil.java" />
         <option value="$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/servlet/WebSocket.java" />
+        <option value="$PROJECT_DIR$/web/js/chat.js" />
+        <option value="$PROJECT_DIR$/FuckChat.iml" />
       </list>
     </option>
   </component>
@@ -100,9 +173,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -197,6 +267,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -209,6 +282,9 @@
     <property name="FullScreen" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/WebRoot/WEB-INF/lib" />
       <recent name="$PROJECT_DIR$/WebRoot/css" />
@@ -626,6 +702,7 @@
       <method />
     </configuration>
     <configuration default="false" name="未命名" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.78" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER" value="false" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="FuckChat">
@@ -713,16 +790,16 @@
       <updated>1497595014207</updated>
       <workItem from="1497595015736" duration="2155000" />
       <workItem from="1497635022440" duration="8000" />
-      <workItem from="1497778156207" duration="1829000" />
+      <workItem from="1497778156207" duration="1866000" />
+      <workItem from="1497804749578" duration="1418000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3992000" />
+    <option name="totallyTimeSpent" value="5447000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -743,12 +820,12 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="消息" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="控制板" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="JavaEE:App" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="JavaEE:App" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -777,6 +854,25 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/servlet/WebSocket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="855">
+          <caret line="57" column="55" lean-forward="true" selection-start-line="57" selection-start-column="55" selection-end-line="57" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/utils/msgUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="41" column="32" lean-forward="false" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
+          <folding>
+            <marker date="1497779863000" expanded="true" signature="1606:1671" ph="INSERT INTO msg... " />
+            <marker date="1497779863000" expanded="true" signature="2170:2205" ph="SELECT * FRO... msg" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -805,30 +901,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1497779991000" expanded="true" signature="64643:64668" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="64643:64690" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="64643:64724" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="64643:64744" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="64643:64759" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="64643:65786" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="64643:65801" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="64794:65100" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="64813:65085" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="64887:65065" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="64927:65031" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="64948:65009" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="65152:65459" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="65171:65444" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="65246:65424" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="65286:65390" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="65307:65368" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="65507:65772" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="65526:65757" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="65559:65737" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="65599:65703" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="65620:65681" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -888,30 +961,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1497779991000" expanded="true" signature="64643:64668" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="64643:64690" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="64643:64724" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="64643:64744" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="64643:64759" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="64643:65786" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="64643:65801" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="64794:65100" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="64813:65085" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="64887:65065" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="64927:65031" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="64948:65009" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="65152:65459" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="65171:65444" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="65246:65424" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="65286:65390" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="65307:65368" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="65507:65772" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="65526:65757" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="65559:65737" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="65599:65703" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="65620:65681" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -966,37 +1016,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1497779991000" expanded="true" signature="64643:64668" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="64643:64690" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="64643:64724" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="64643:64744" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="64643:64759" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="64643:65786" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="64643:65801" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="64794:65100" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="64813:65085" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="64887:65065" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="64927:65031" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="64948:65009" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="65152:65459" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="65171:65444" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="65246:65424" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="65286:65390" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="65307:65368" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="65507:65772" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="65526:65757" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="65559:65737" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="65599:65703" ph="..." />
-            <marker date="1497779991000" expanded="true" signature="65620:65681" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1008,16 +1027,6 @@
         <state relative-caret-position="135">
           <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/servlet/LoginServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="22" column="16" lean-forward="false" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1097,22 +1106,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/servlet/WebSocket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="685">
-          <caret line="57" column="55" lean-forward="true" selection-start-line="57" selection-start-column="55" selection-end-line="57" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/utils/msgUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-111">
-          <caret line="41" column="32" lean-forward="false" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
+        <state relative-caret-position="675">
+          <caret line="58" column="32" lean-forward="false" selection-start-line="58" selection-start-column="32" selection-end-line="58" selection-end-column="32" />
           <folding>
             <marker date="1497779863000" expanded="true" signature="1606:1671" ph="INSERT INTO msg... " />
             <marker date="1497779863000" expanded="true" signature="2170:2205" ph="SELECT * FRO... msg" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/chat.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="659">
+          <caret line="59" column="141" lean-forward="false" selection-start-line="59" selection-start-column="141" selection-end-line="59" selection-end-column="142" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FuckChat.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="39" lean-forward="false" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/servlet/WebSocket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="57" column="55" lean-forward="false" selection-start-line="57" selection-start-column="55" selection-end-line="57" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/servlet/LoginServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="19" lean-forward="false" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1123,10 +1174,10 @@
         <settings>
           <artifact-editor>
             <show-content>
-              <type id="library" />
               <type id="artifact" />
-              <type id="javaee-facet-resources" />
+              <type id="library" />
               <type id="jpa-descriptors" />
+              <type id="javaee-facet-resources" />
             </show-content>
           </artifact-editor>
           <last-edited>FuckChat</last-edited>
