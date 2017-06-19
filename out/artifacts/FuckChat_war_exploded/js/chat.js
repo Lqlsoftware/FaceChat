@@ -101,16 +101,51 @@ $(document).ready(function() {
     initSocket();
     img = $('#img');
     $('#chat').empty;
-    $('#userId').val(id);
     $('body').height($(window).height());
     $('#chat').height($(window).height() - $('.input-area').height() - 40);
-    $('#submit_form').attr('action', serverURL + 'imgUpload');
     img.change(function() {
-        if (img.val() != '') {
-            $('#submit_form').submit();
+        if (img.val() !== '') {
+            uploadFile();
             $('#chat').append('<li class="me" id="uploading">Uploading...</li>');
             scrollToLocation();
         }
         img.val("");
     });
 });
+
+function uploadFile() {
+    var fd = new FormData();
+    fd.append("img", document.getElementById('img').files[0]);
+    fd.append("userId", id);
+    var xhr = new XMLHttpRequest();
+    xhr.upload.addEventListener("progress", uploadProgress, false);
+    // xhr.addEventListener("load", uploadComplete, false);
+    // xhr.addEventListener("error", uploadFailed, false);
+    // xhr.addEventListener("abort", uploadCanceled, false);
+    xhr.open("POST", serverURL + 'imgUpload');
+    xhr.send(fd);
+}
+
+function uploadProgress(evt) {
+    var uploading = $('#uploading');
+    if (evt.lengthComputable) {
+        var percentComplete = Math.round(evt.loaded * 100 / evt.total);
+        uploading.empty();
+        uploading.append(percentComplete.toString() + '%');
+    } else {
+        document.getElementById('uploading').innerHTML = 'unable to compute';
+    }
+}
+
+// function uploadComplete(evt) {
+//     /* 服务器端返回响应时候触发event事件*/
+//     alert(evt.target.responseText);
+// }
+//
+// function uploadFailed(evt) {
+//     alert("There was an error attempting to upload the file.");
+// }
+//
+// function uploadCanceled(evt) {
+//     alert("The upload has been canceled by the user or the browser dropped the connection.");
+// }

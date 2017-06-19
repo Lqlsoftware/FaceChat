@@ -34,7 +34,8 @@ public class ImgUploadServlet extends HttpServlet {
 		// 设置传输数据格式
 		request.setCharacterEncoding("UTF-8");
 		response.setHeader("content-type","text/html;charset=UTF-8");
-		
+		response.setHeader("Access-Control-Allow-Origin", "*");
+
 		// 获取页面数据
 		String userId = request.getParameter("userId");
 		

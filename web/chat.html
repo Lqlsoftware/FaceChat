@@ -31,11 +31,7 @@
         <textarea class="input" id="msg" onkeydown="if(event.keyCode==13){sendtext();event.preventDefault();}"></textarea>
         <input type="submit" class="send" onclick="sendtext();" value="SEND">
     </div>
-    <form id="submit_form" style="visibility:hidden" method="post" target="exec_target" enctype="multipart/form-data">
-        <input type="file" accept="image/*,video/mp4,video/mpg,video/ogg" id="img" name="img" style="visibility:hidden">
-        <input type="hidden" value="" id="userId" name="userId">
-    </form>
-    <iframe id="exec_target" style="visibility:hidden" name="exec_target"></iframe>
+    <input type="file" accept="image/*,video/mp4,video/mpg,video/ogg" id="img" name="img" style="visibility:hidden">
 </body>
 
 </html>
