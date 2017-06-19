@@ -3,6 +3,7 @@ var tryTime = 0;
 var token = GetQueryString('token');
 var id = token.split("_")[0];
 var img = null;
+var numvalue = 0;
 var serverURL = "http://localhost:8080/FuckChat/";
 
 function sendtext() {
@@ -47,11 +48,25 @@ function initSocket() {
                     $('#chat').append('<li class="me"><span class="head"></span>' + msg.context + '</li>');
                 else
                     $('#chat').append('<li class="to"><span class="head"></span>' + msg.from + ' : ' + msg.context + '</li>');
-            else if (msg.type == "img")
-                if (msg.from == id)
-                    $('#chat').append('<li class="me"><img class="img" src=' + msg.context + '></li>');
+            else if (msg.type == "img") {
+                if (msg.from == id) {
+                    var target = $('#chat').find('#uploading:first');
+                    if (!target[0])
+                        $('#chat').append('<li class="me"><img src=' + msg.context + ' class="img" data-source="' + msg.context + '"></li>');
+                    else {
+                        target.empty();
+                        target.append('<img src=' + msg.context + ' class="img" data-source="' + msg.context + '">');
+                        target.attr('id', '');
+                    }
+                }
                 else
-                    $('#chat').append('<li class="to">' + msg.from + ':<br><img class="img" src=' + msg.context + '></li>');
+                    $('#chat').append('<li class="to">' + msg.from + ':<br><img src=' + msg.context + ' class="img" data-source="' + msg.context + '"></li>');
+                $(function() {
+                    $('#lightbox').lightbox({
+                        ifChange: true
+                    });
+                });
+            }
             else if (msg.type == "vid")
                 if (msg.from == id) {
                     var target = $('#chat').find('#uploading:first');
@@ -106,7 +121,16 @@ $(document).ready(function() {
     img.change(function() {
         if (img.val() !== '') {
             uploadFile();
-            $('#chat').append('<li class="me" id="uploading">Uploading...</li>');
+            $('#chat').append('<li class="me" id="uploading"><div class="circleChart"></div></li>');
+            $(".circleChart").circleChart({
+                size: $('body').width() / 5,
+                value: 0,
+                text: false,
+                animate: false,
+                onDraw: function(el, circle) {
+                    circle.text(numvalue + '%');
+                }
+            });
             scrollToLocation();
         }
         img.val("");
@@ -119,7 +143,7 @@ function uploadFile() {
     fd.append("userId", id);
     var xhr = new XMLHttpRequest();
     xhr.upload.addEventListener("progress", uploadProgress, false);
-    // xhr.addEventListener("load", uploadComplete, false);
+    xhr.addEventListener("load", uploadComplete, false);
     // xhr.addEventListener("error", uploadFailed, false);
     // xhr.addEventListener("abort", uploadCanceled, false);
     xhr.open("POST", serverURL + 'imgUpload');
@@ -129,18 +153,19 @@ function uploadFile() {
 function uploadProgress(evt) {
     var uploading = $('#uploading');
     if (evt.lengthComputable) {
-        var percentComplete = Math.round(evt.loaded * 100 / evt.total);
-        uploading.empty();
-        uploading.append(percentComplete.toString() + '%');
+        numvalue = Math.round(evt.loaded * 100 / evt.total);
+        $(".circleChart").circleChart({
+            value: numvalue
+        });
     } else {
         document.getElementById('uploading').innerHTML = 'unable to compute';
     }
 }
 
-// function uploadComplete(evt) {
-//     /* 服务器端返回响应时候触发event事件*/
-//     alert(evt.target.responseText);
-// }
+function uploadComplete(evt) {
+    /* 服务器端返回响应时候触发event事件*/
+    numvalue = 0;
+}
 //
 // function uploadFailed(evt) {
 //     alert("There was an error attempting to upload the file.");

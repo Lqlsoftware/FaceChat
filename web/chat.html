@@ -9,6 +9,7 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,minimal-ui">
     <link rel="stylesheet" href="css/chat.css" media="screen" type="text/css" />
+    <link rel="stylesheet" href="css/lightbox.css" type="text/css">
     <link rel="apple-touch-startup-image" href="images/splash.png">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" href="favicon/favicon-32x32.png" sizes="32x32">
@@ -19,12 +20,16 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <script src='js/jquery.js'></script>
     <script src='js/chat.js'></script>
+    <script src='js/circleChart.js'></script>
+    <script src="js/lightbox.js"></script>
 </head>
 
 <body>
     <div id="convo">
+        <div id="lightbox">
         <ul id="chat" class="chat-thread">
         </ul>
+        </div>
     </div>
     <div class="input-area">
         <input class="image" id="amsg" type="submit" onclick="img.click();" value="图">
@@ -32,6 +37,17 @@
         <input type="submit" class="send" onclick="sendtext();" value="SEND">
     </div>
     <input type="file" accept="image/*,video/mp4,video/mpg,video/ogg" id="img" name="img" style="visibility:hidden">
+    <div id="lightbox_mask"></div>
+    <div id="lightbox_popup">
+        <div class="pic-view">
+            <img src="" alt="#" class="pic">
+        </div>
+        <div class="btn-view">
+            <a href="#" class="btn btn-prev">←</a>
+            <a href="#" class="btn btn-next">→</a>
+            <a href="#" class="btn btn-close">×</a>
+        </div>
+    </div>
 </body>
 
 </html>
