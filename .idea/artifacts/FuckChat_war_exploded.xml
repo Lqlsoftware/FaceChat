@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="FuckChat:war exploded">
+  <artifact type="war" name="FuckChat:war exploded">
     <output-path>$PROJECT_DIR$/out/artifacts/FuckChat_war_exploded</output-path>
-    <root id="root">
+    <root id="archive" name="FuckChat_war exploded.war">
       <element id="javaee-facet-resources" facet="FuckChat/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">

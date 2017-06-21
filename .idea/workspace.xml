@@ -6,7 +6,13 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="25d1afd8-503c-4d79-a870-4605bf2a2337" name="默认的" comment="" />
+    <list default="true" id="25d1afd8-503c-4d79-a870-4605bf2a2337" name="默认的" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/FuckChat_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/FuckChat_war_exploded.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/dao/DBManager.java" afterPath="$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/dao/DBManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/app.js" afterPath="$PROJECT_DIR$/web/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/chat.js" afterPath="$PROJECT_DIR$/web/js/chat.js" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,8 +27,18 @@
       <file leaf-file-name="chat.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/js/chat.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="945">
-              <caret line="63" column="30" lean-forward="true" selection-start-line="63" selection-start-column="30" selection-end-line="63" selection-end-column="30" />
+            <state relative-caret-position="233">
+              <caret line="148" column="36" lean-forward="false" selection-start-line="148" selection-start-column="36" selection-end-line="148" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DBManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/dao/DBManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="18" column="48" lean-forward="false" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -61,8 +77,8 @@
       <file leaf-file-name="ImgUploadServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/servlet/ImgUploadServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+            <state relative-caret-position="208">
+              <caret line="36" column="55" lean-forward="true" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -71,9 +87,21 @@
       <file leaf-file-name="LoginServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/servlet/LoginServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="26" column="69" lean-forward="false" selection-start-line="26" selection-start-column="69" selection-end-line="27" selection-end-column="63" />
+            <state relative-caret-position="179">
+              <caret line="25" column="46" lean-forward="true" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WebSocket.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/servlet/WebSocket.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="23" column="13" lean-forward="true" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -81,8 +109,8 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state relative-caret-position="293">
+              <caret line="20" column="45" lean-forward="false" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -106,6 +134,8 @@
         <option value="$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/servlet/ImgUploadServlet.java" />
         <option value="$PROJECT_DIR$/web/chat.html" />
         <option value="$PROJECT_DIR$/web/js/lightbox.js" />
+        <option value="$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/dao/DBManager.java" />
+        <option value="$PROJECT_DIR$/web/js/app.js" />
         <option value="$PROJECT_DIR$/web/js/chat.js" />
       </list>
     </option>
@@ -143,7 +173,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -290,6 +319,7 @@
       </pane>
       <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -297,7 +327,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="FullScreen" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -810,15 +840,15 @@
       <workItem from="1497806284295" duration="5344000" />
       <workItem from="1497853151258" duration="2616000" />
       <workItem from="1497885475976" duration="1115000" />
+      <workItem from="1497940764911" duration="2322000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11343000" />
+    <option name="totallyTimeSpent" value="13665000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -875,14 +905,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/servlet/TokenLoginServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/servlet/ImgUploadServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -1136,21 +1158,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/servlet/WebSocket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="15" column="15" lean-forward="false" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/css/chat.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="317">
           <caret line="143" column="14" lean-forward="true" selection-start-line="143" selection-start-column="14" selection-end-line="143" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1171,14 +1182,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/servlet/ImgUploadServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/1.html" />
     <entry file="file://$PROJECT_DIR$/web/js/circleChart.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -1188,18 +1191,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/servlet/LoginServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/servlet/WebSocket.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="26" column="69" lean-forward="false" selection-start-line="26" selection-start-column="69" selection-end-line="27" selection-end-column="63" />
-          <folding />
+        <state relative-caret-position="180">
+          <caret line="23" column="13" lean-forward="true" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/app.js">
+    <entry file="file://$PROJECT_DIR$/web/chat.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <caret line="11" column="67" lean-forward="false" selection-start-line="11" selection-start-column="67" selection-end-line="11" selection-end-column="67" />
           <folding />
         </state>
       </provider>
@@ -1212,10 +1217,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/chat.html">
+    <entry file="file://$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/dao/DBManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="67" lean-forward="false" selection-start-line="11" selection-start-column="67" selection-end-line="11" selection-end-column="67" />
+        <state relative-caret-position="240">
+          <caret line="18" column="48" lean-forward="false" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="20" column="45" lean-forward="false" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/servlet/LoginServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="25" column="46" lean-forward="true" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/servlet/ImgUploadServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="36" column="55" lean-forward="true" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="55" />
           <folding />
         </state>
       </provider>
@@ -1230,8 +1259,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/chat.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="63" column="30" lean-forward="true" selection-start-line="63" selection-start-column="30" selection-end-line="63" selection-end-column="30" />
+        <state relative-caret-position="233">
+          <caret line="148" column="36" lean-forward="false" selection-start-line="148" selection-start-column="36" selection-end-line="148" selection-end-column="36" />
           <folding />
         </state>
       </provider>

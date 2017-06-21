@@ -18,7 +18,7 @@ function login() {
     if ($("#id").val() != '' && $("#pw").val() != '') {
         $.ajax({
             type: "POST",
-            url: "http://localhost:8080/FuckChat/login",
+            url: "http://lqlsoftware.top/test/login",
             data: { "username": $("#id").val(), "password": $("#pw").val() },
             success: function(data) {
                 if (data.errMsg == "")

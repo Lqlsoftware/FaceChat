@@ -4,7 +4,7 @@ var token = GetQueryString('token');
 var id = token.split("_")[0];
 var img = null;
 var numvalue = 0;
-var serverURL = "http://localhost:8080/FuckChat/";
+var serverURL = "http://lqlsoftware.top/test/";
 
 function sendtext() {
     if (webSocket != null && webSocket.readyState == 1) {
@@ -146,7 +146,7 @@ function uploadFile() {
     xhr.addEventListener("load", uploadComplete, false);
     // xhr.addEventListener("error", uploadFailed, false);
     // xhr.addEventListener("abort", uploadCanceled, false);
-    xhr.open("POST", serverURL + 'imgUpload');
+    xhr.open("POST", './imgUpload');
     xhr.send(fd);
 }
 

@@ -108,19 +108,6 @@ ul {
     padding: 0px;
 }
 
-blockquote,
-q {
-    quotes: none;
-}
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-    content: '';
-    content: none;
-}
-
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -298,7 +285,7 @@ body h1 {
 .app-location input[type="text"],
 .app-location input[type="password"] {
     width: 75%;
-    padding: 1em 1em 1em 4em;
+    padding: 1em 1em 1em 1em;
     color: #858282;
     font-size: 16px;
     outline: none;
@@ -311,11 +298,11 @@ body h1 {
     -moz-border-radius: 0.3em;
     -webkit-border-radius: 0.3em;
     margin: 0.5em 0.5em;
-    background: url("../images/email.png") no-repeat 5% 50% #474a55;
+    background: #474a55;
 }
 
 .app-location input[type="password"] {
-    background: url("../images/password.png") no-repeat 5% 50% #474a55;
+    background: #474a55;
 }
 
 .app-location button {
@@ -492,7 +479,7 @@ body h1 {
 @media (max-width:320px) {
     .app-location {
         width: 87%;
-        padding: 2em 1em 1em 1em;
+        padding: 1em 1em 1em 1em;
     }
     body h1 {
         font-size: 1.5em;
@@ -504,13 +491,13 @@ body h1 {
     .app-location input[type="text"],
     .app-location input[type="password"] {
         width: 65%;
-        padding: 1em 1em 1em 4em;
+        padding: 1em 1em 1em 1em;
         font-size: 15px;
-        background: url("../images/email.png") no-repeat 5% 50% #474a55;
+        background: #474a55;
         background-size: 11%;
     }
     .app-location input[type="password"] {
-        background: url("../images/password.png") no-repeat 5% 50% #474a55;
+        background: #474a55;
         background-size: 11%;
     }
     .app-location h2 {
