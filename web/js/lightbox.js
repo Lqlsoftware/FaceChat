@@ -4,7 +4,7 @@
     var Lightbox = function(elem, options) {
         var self = this;
         this.$elem = elem;
-        this.$pic_item = this.$elem.find('.lightbox-pic');
+        this.$pic_item = this.$elem.find('.img');
         this.$popMask = $('#lightbox_mask');
         this.$popWin = $('#lightbox_popup');
         this.$picView = this.$popWin.find('.pic-view');
@@ -112,12 +112,12 @@
                 self.$popMask.fadeOut();
                 self.$popWin.fadeOut();
             });
-
+ 
             this.$pic.click(function() {
-                self.$popMask.fadeOut();
-                self.$popWin.fadeOut();
+                 self.$popMask.fadeOut();
+                 self.$popWin.fadeOut();
             });
-
+ 
             var target = document.getElementById('lightbox_popup');
             var slider = {
                 //判断设备是否支持touch事件
@@ -140,7 +140,6 @@
                         var touch = event.targetTouches[0]; //touches数组对象获得屏幕上所有的touch，取第一个touch
                         startPos = { x: touch.pageX, y: touch.pageY }; //取第一个touch的坐标值
                         isScrolling = 0; //这个参数判断是垂直滚动还是水平滚动
-                        console.log(this.target);
                         target.addEventListener('touchmove', this, false);
                         target.addEventListener('touchend', this, false);
                         this.isChange = false;
@@ -155,11 +154,12 @@
                         if (this.isChange === false && isScrolling === 0) {
                             // 往左滑
                             if (endPos.x < $('body').width() / -2) {
-                                if (self.index >= self.groupData.length - 1) {
-                                    self.index = 0;
+                                if (self.index <= 0) {
+                                    self.index = self.groupData.length - 1;
                                 } else {
-                                    self.index++;
+                                    self.index--;
                                 }
+                                self.changePic();
                                 this.isChange = true;
                             }
                             // 往右划
@@ -169,9 +169,9 @@
                                 } else {
                                     self.index++;
                                 }
+                                self.changePic();
                                 this.isChange = true;
                             }
-                            self.changePic();
                         }
                     },
                     //滑动释放

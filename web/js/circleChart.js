@@ -196,7 +196,7 @@
         }
         if ((time - startTime < this.settings.speed * 1.05)/* time not over */ && (!move && (this.cAngle) * 1000 <= Math.floor((this.eAngle) * 1000)/* move clockwise */ || move && (this.cAngle) * 1000 >= Math.floor((this.eAngle) * 1000)/* move counterclockwise */)) {
           this.cAngle = Math[this.settings.animation]((time - startTime) / mspf, this.sAngle, this.eAngle - this.sAngle, this.settings.speed / mspf);
-          ctx.clearRect(0, 0, this.settings.size, this.settings.size);
+          ctx.clearRect(0, 0, settings.size, settings.size);
           if (this.settings.background) {
             this.drawBackground(ctx);
           }
@@ -206,7 +206,7 @@
           rAF(() => this.animate(el, ctx, time, startTime, move));
         } else {
           this.cAngle = this.eAngle;
-          ctx.clearRect(0, 0, this.settings.size, this.settings.size);
+          ctx.clearRect(0, 0, settings.size, settings.size);
           if (this.settings.background) {
             this.drawBackground(ctx);
           }
@@ -368,7 +368,7 @@
             circle.onDraw(el);
             circle.setCurrentAnglesData(el);
           } else {
-            ctx.clearRect(0, 0, this.settings.size, this.settings.size);
+            ctx.clearRect(0, 0, settings.size, settings.size);
             if (circle.settings.background) {
               circle.drawBackground(ctx);
             }
@@ -379,7 +379,7 @@
           circle.animate(el, ctx, new Date().getTime(), new Date().getTime(), cAngle > eAngle);
         } else {
           rAF(() => {
-            ctx.clearRect(0, 0, this.settings.size, this.settings.size);
+            ctx.clearRect(0, 0, settings.size, settings.size);
             if (circle.settings.background) {
               circle.drawBackground(ctx);
             }
