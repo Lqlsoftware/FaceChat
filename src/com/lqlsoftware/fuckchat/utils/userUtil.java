@@ -35,5 +35,25 @@ public class userUtil {
         return TM.getAuthentication();
     }
 
+    public static boolean findUserByName(String username) throws IOException {
+        if (username == null || username.equals(""))
+            return false;
+        Connection conn = DBManager.getConnection();
+        PreparedStatement ps = null;
+        String sql = "SELECT user_name FROM user WHERE login_name=?";
+        try {
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, username);
+            ResultSet rs = ps.executeQuery();
+            if (!rs.next())
+                return false;
+            else
+                return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
 
 }
