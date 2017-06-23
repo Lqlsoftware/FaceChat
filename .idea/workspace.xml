@@ -6,13 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="25d1afd8-503c-4d79-a870-4605bf2a2337" name="默认的" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/servlet/TokenLoginServlet.java" afterPath="$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/servlet/SignUpServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/utils/userUtil.java" afterPath="$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/utils/userUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/register.html" afterPath="$PROJECT_DIR$/web/register.html" />
-    </list>
+    <list default="true" id="25d1afd8-503c-4d79-a870-4605bf2a2337" name="默认的" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -858,12 +852,12 @@
       <workItem from="1497853151258" duration="2616000" />
       <workItem from="1497885475976" duration="1115000" />
       <workItem from="1497940764911" duration="2322000" />
-      <workItem from="1498108280910" duration="1363000" />
+      <workItem from="1498108280910" duration="1710000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15028000" />
+    <option name="totallyTimeSpent" value="15375000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
