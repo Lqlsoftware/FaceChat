@@ -3,10 +3,10 @@ var Tip;
 function judgeUA() {
     var ua = navigator.userAgent.toLowerCase();
     if (ua.match(/MicroMessenger/i) == "micromessenger") {
-        Tip = $('<div id="Tip"><p><img src="live_weixin.png" style="max-width: 100%; height: auto;" alt="微信打开"/></p></div>');
+        Tip = $('<div id="Tip"><p><img src="images/live_weixin.png" style="max-width: 100%; height: auto;" alt="微信打开"/></p></div>');
         return true;
-    } else if (window.navigator.standalone === true) {
-        Tip = $('<div id="Tip"><p align="center"><img src="add_to_screen.png" style="max-width: 100%; position: absolute; bottom: 0px;" alt="添加到主屏幕"/></p></div>');
+    } else if (window.navigator.standalone === false) {
+        Tip = $('<div id="Tip"><p align="center"><img src="images/add_to_screen.png" style="max-width: 100%; position: absolute; bottom: 0px;left:0px" alt="添加到主屏幕"/></p></div>');
         return true;
     } else {
         return false;

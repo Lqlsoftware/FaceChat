@@ -6,10 +6,6 @@ function hideURLbar() {
     window.scrollTo(0, 1);
 }
 
-document.ontouchmove = function(e) {
-    e.preventDefault();
-}
-
 $(document).ready(function() {
     $('#sm').width($('#id').width() + 45);
 });
