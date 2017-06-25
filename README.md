@@ -1,6 +1,7 @@
 # FuckChat
 基于WebSocket协议构建的多人在线聊天工具
-[http://lqlsoftware.top/test/](http://lqlsoftware.top/test/)
+部署地址
+[http://lqlsoftware.top/test/](http://lqlsoftware.top/test/)
 
 ### 用户登陆
 没有开发hybrid app，暂时实现用户添加到主页面以url方式存储token + token验证方式进行登录验证。
