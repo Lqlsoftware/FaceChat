@@ -30,24 +30,29 @@ public class SignUpServlet extends HttpServlet {
 		response.setHeader("content-type","text/html;charset=UTF-8");
 		
 		// 获取页面数据
-		String token = request.getParameter("token");
+        String phone = request.getParameter("phone");
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
 
-        // 登陆失败
-        if (token == null || token.equals("")) {
-            response.getWriter().write(msgUtil.getErrorMsg("Authority Error!").toString());
+        if (phone == null || phone.equals("") || phone.length() != 13) {
+            response.getWriter().write(msgUtil.getErrorMsg("Wrong Phone Number").toString());
             return;
         }
+
+        // 查找到相同用户名
+        if (userUtil.findUserByName(phone) == true) {
+            response.getWriter().write(msgUtil.getErrorMsg("Aleady Sign Up").toString());
+            return;
+        }
+
+        userUtil.creatUser(phone, username, password);
 
         TokenManager TMR = new TokenManager();
-        TokenModel TM = TMR.getToken(token);
-        if (!TMR.checkToken(TM)) {
-            response.getWriter().write(msgUtil.getErrorMsg("Authority Error!").toString());
-            return;
-        }
+        TokenModel TM = TMR.createToken(username);
 
         JSONObject msg = new JSONObject();
         JSONObject data = new JSONObject();
-        data.put("token", token);
+        data.put("token", TM.getAuthentication());
         msg.put("code", 1);
         msg.put("data", data);
         msg.put("errMsg", "");
