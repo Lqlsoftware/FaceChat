@@ -1,0 +1,12 @@
+body							{background:#1c1c1c; font-family: Microsoft Yahei;}
+h    							{color: white; font-size: 1.2em; font-family: Microsoft Yahei;}
+
+.line							{height: 1px; background-color:#9c9c9c; top:50%; left:0px; width:50%; margin-top: 0.3em}
+.contents 						{height: 2em; width:82%; border-radius: 7px; border:1px solid #9c9c9c; background-color: transparent; color: white; margin-top: 2em;}
+.contents::-webkit-input-placeholder   {font-family: Microsoft Yahei;}
+
+#phonenum  						{height: 2em; width:60%; border-radius: 7px 0px 0px 7px; border:1px solid #9c9c9c; background-color: transparent; color: white}
+#phonenum::-webkit-input-placeholder   {font-family: Microsoft Yahei;}
+#check 							{height: 2.3em; width:20%; border-radius: 0px 7px 7px 0px; border:1px solid #9c9c9c; background-color: transparent; color: #cfcfcf; font-family: Microsoft Yahei; margin-top: 0.12em}
+#sign 							{height: 2.7em; width:82%; border-radius: 7px; border:2px solid #00cd00; background-color: transparent; color: #00cd00; margin-top: 3em; font-family: Microsoft Yahei;}
+#back 							{height: 2.7em; width:82%; border-radius: 7px; border:2px solid #ee3b3b; background-color: transparent; color: #00cd00; margin-top: 1.6em; font-family: Microsoft Yahei;}
