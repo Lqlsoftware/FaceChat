@@ -5,6 +5,7 @@ var id = token.split("_")[0];
 var img = null;
 var numvalue = 0;
 var serverURL = "http://lqlsoftware.top/test/";
+var isMain = false;
 
 function sendtext() {
     if (webSocket != null && webSocket.readyState == 1) {
@@ -58,16 +59,14 @@ function initSocket() {
                         target.append('<img src=' + msg.context + ' class="img" data-source="' + msg.context + '">');
                         target.attr('id', '');
                     }
-                }
-                else
+                } else
                     $('#chat').append('<li class="to">' + msg.from + ':<br><img src=' + msg.context + ' class="img" data-source="' + msg.context + '"></li>');
                 $(function() {
                     $('#lightbox').lightbox({
                         ifChange: true
                     });
                 });
-            }
-            else if (msg.type == "vid")
+            } else if (msg.type == "vid")
                 if (msg.from == id) {
                     var target = $('#chat').find('#uploading:first');
                     if (!target[0])
@@ -77,8 +76,7 @@ function initSocket() {
                         target.append('<video height="100%" width="100%" onclick="this.play()"><source src=' + msg.context + '></video>');
                         target.attr('id', '');
                     }
-                }
-                else
+                } else
                     $('#chat').append('<li class="to">' + msg.from + ':<br><video height="100%" width="100%" onclick="this.play()"><source src=' + msg.context + '></video></li>');
             scrollToLocation();
         } else if (data.code == -1) {

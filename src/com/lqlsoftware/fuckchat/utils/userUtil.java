@@ -55,5 +55,23 @@ public class userUtil {
         return false;
     }
 
-
+    public static boolean creatUser(String phone, String username, String password) {
+        if (phone.equals("") || username.equals("") || password.equals("")) {
+            return false;
+        }
+        Connection conn = DBManager.getConnection();
+        PreparedStatement ps = null;
+        String sql = "INSERT INTO user (user_name,login_name,password)VALUES(?,?,?)";
+        try {
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, username);
+            ps.setString(2, phone);
+            ps.setString(3, password);
+            ps.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
 }

@@ -5,7 +5,7 @@ function judgeUA() {
     if (ua.match(/MicroMessenger/i) == "micromessenger") {
         Tip = $('<div id="Tip"><p><img src="images/live_weixin.png" style="max-width: 100%; height: auto;" alt="微信打开"/></p></div>');
         return true;
-    } else if (window.navigator.standalone === false) {
+    } else if (isMain === false && window.navigator.standalone === false) {
         Tip = $('<div id="Tip"><p align="center"><img src="images/add_to_screen.png" style="max-width: 100%; position: absolute; bottom: 0px;left:0px" alt="添加到主屏幕"/></p></div>');
         return true;
     } else {
