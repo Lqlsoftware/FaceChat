@@ -34,13 +34,13 @@ public class WebSocket {
 	public void onOpen(@PathParam("token") String token, Session session)
 			throws IOException, InterruptedException, SQLException {
 		if (token == null || token.equals("")) {
-			session.getBasicRemote().sendText(msgUtil.getSysMsg(-1, "Please relogin", ""));
+			session.getBasicRemote().sendText(msgUtil.getSysMsg(-2, "Please relogin", ""));
 			return;
 		}
 		TokenManager TMR = new TokenManager();
 		TokenModel TM = TMR.getToken(token);
 		if (!TMR.checkToken(TM)) {
-			session.getBasicRemote().sendText(msgUtil.getSysMsg(-1, "Please relogin", ""));
+			session.getBasicRemote().sendText(msgUtil.getSysMsg(-2, "Please relogin", ""));
 			return;
 		}
 		SessionUtil.put(TM.getUserId(), session);
