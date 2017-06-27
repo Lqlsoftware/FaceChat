@@ -1,12 +1,203 @@
-body							{background:#1c1c1c; font-family: Microsoft Yahei;}
-h    							{color: white; font-size: 1.2em; font-family: Microsoft Yahei;}
+body{
+    background:#1c1c1c;
+    font-family: Microsoft Yahei;
+    margin: 0 auto;
+    text-align: center;
+}
 
-.line							{height: 1px; background-color:#9c9c9c; top:50%; left:0px; width:50%; margin-top: 0.3em}
-.contents 						{height: 2em; width:82%; border-radius: 7px; border:1px solid #9c9c9c; background-color: transparent; color: white; margin-top: 2em;}
-.contents::-webkit-input-placeholder   {font-family: Microsoft Yahei;}
+h   {color: white;
+    font-size: 1.2em;
+    font-family: Microsoft Yahei;
+}
 
-#phonenum  						{height: 2em; width:60%; border-radius: 7px 0px 0px 7px; border:1px solid #9c9c9c; background-color: transparent; color: white}
-#phonenum::-webkit-input-placeholder   {font-family: Microsoft Yahei;}
-#check 							{height: 2.3em; width:20%; border-radius: 0px 7px 7px 0px; border:1px solid #9c9c9c; background-color: transparent; color: #cfcfcf; font-family: Microsoft Yahei; margin-top: 0.12em}
-#sign 							{height: 2.7em; width:82%; border-radius: 7px; border:2px solid #00cd00; background-color: transparent; color: #00cd00; margin-top: 3em; font-family: Microsoft Yahei;}
-#back 							{height: 2.7em; width:82%; border-radius: 7px; border:2px solid #ee3b3b; background-color: transparent; color: #00cd00; margin-top: 1.6em; font-family: Microsoft Yahei;}
+.line   {
+    height: 1px;
+    background-color:#9c9c9c;
+    top:50%;
+    left:0px;
+    width:50%;
+    margin-top: 0.3em;
+}
+
+.contents   {
+    height: 2em;
+    border-radius: 7px;
+    border:1px solid #9c9c9c;
+    background-color: transparent;
+    color: white;
+    margin-top: 2em;
+}
+
+.contents::-webkit-input-placeholder   {
+    font-family: Microsoft Yahei;
+}
+
+#phonenum   {
+    height: 2em;
+    width: 57%;
+    border-radius: 7px 0px 0px 7px;
+    border:1px solid #9c9c9c;
+    background-color: transparent;
+    color: white;
+}
+
+#phonenum::-webkit-input-placeholder   {
+    font-family: Microsoft Yahei;
+}
+
+#check  {
+    height: 2.3em;
+    width: 19%;
+    border-radius: 0px 7px 7px 0px;
+    border:1px solid #9c9c9c;
+    background-color: transparent;
+    color: #cfcfcf;
+    font-family: Microsoft Yahei;
+    margin-top: 0.12em;
+}
+
+#sign   {
+    height: 2.7em;
+    border-radius: 7px;
+    border:2px solid #00cd00;
+    background-color: transparent;
+    color: #00cd00;
+    margin-top: 3em;
+    font-family: Microsoft Yahei;
+}
+
+#back   {
+    height: 2.7em;
+    border-radius: 7px;
+    border:2px solid #ee3b3b;
+    background-color: transparent;
+    color: #00cd00;
+    margin-top: 1.6em;
+    font-family: Microsoft Yahei;
+}
+
+@media (max-width:1920px) {
+    .main {
+        width: 30%;
+        margin-left: 35%;
+        margin-right: 35%;
+        margin-top: 5%;
+    }
+    .main input[type="text"],
+    .main input[type="submit"],
+    .main input[type="password"] {
+        width: 77%;
+    }
+}
+
+@media (max-width:1440px) {
+    .main {
+        width: 30%;
+        margin-left: 35%;
+        margin-right: 35%;
+        margin-top: 5%;
+    }
+    .main input[type="text"],
+    .main input[type="submit"] {
+        width: 77%;
+    }
+}
+
+@media (max-width:1366px) {
+    .main {
+        width: 34%;
+        margin-left: 33%;
+        margin-right: 33%;
+        margin-top: 5%;
+    }
+    .main input[type="text"],
+    .main input[type="submit"] {
+        width: 77%;
+    }
+    .line span {
+        position: absolute;
+        top: 10%;
+        left: 39%;
+        background: #5b5c61;
+        height: 1px;
+        width: 20%;
+    }
+    body h1 {
+        font-size: 2.6em;
+    }
+}
+
+@media (max-width:1280px) {
+    .main {
+        width: 36%;
+        margin-left: 32%;
+        margin-right: 32%;
+        margin-top: 5%;
+    }
+}
+
+@media (max-width:1024px) {
+    .main {
+        width: 46%;
+        margin-left: 27%;
+        margin-right: 27%;
+        margin-top: 5%;
+    }
+}
+
+@media (max-width:768px) {
+    .line span {
+        top: 10%;
+        left: 39%;
+        height: 1px;
+        width: 20%;
+    }
+    .main {
+        width: 62%;
+        margin-left: 19%;
+        margin-right: 19%;
+        margin-top: 5%;
+    }
+}
+
+@media (max-width:640px) {
+    .main {
+        width: 68%;
+        margin-left: 16%;
+        margin-right: 16%;
+        margin-top: 5%;
+    }
+    .main input[type="text"],
+    .main input[type="submit"] {
+        width: 77%;
+    }
+}
+
+@media (max-width:480px) {
+    .main {
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-top: 5%;
+    }
+    .main input[type="text"],
+    .main input[type="submit"] {
+        width: 77%;
+        margin: 0.4em 0;
+    }
+}
+
+@media (max-width:320px) {
+    .main {
+        width: 86%;
+        margin-left: 7%;
+        margin-right: 7%;
+        margin-top: 5%;
+    }
+    .main input[type="text"],
+    .main input[type="submit"] {
+        width: 77%;
+        padding: 1em 1em 1em 4em;
+        font-size: 15px;
+    }
+}
