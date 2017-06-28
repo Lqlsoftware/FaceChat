@@ -111,9 +111,22 @@ function initSocket() {
                 "border": "3px solid #0bd38a",
             });
             $('#sm').onclick = function() {
-                $.ajax(
-
-                );
+                $.ajax({
+                    type: "POST",
+                    url: "http://lqlsoftware.top/test/tokenLogin",
+                    data: { "username": $("#phone").val(), "password": $("#password").val(), "token": token },
+                    success: function(data) {
+                        if (data.code == 1 && data.errMsg == "") {
+                            $("#Tip").remove();
+                            initSocket();
+                        } else {
+                            $("#phone").val("");
+                            $("#password").val("");
+                            $("#phone").attr("placeholder", data.errMsg);
+                        }
+                    },
+                    dataType: "json"
+                });
             }
         }
     };
