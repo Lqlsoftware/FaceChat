@@ -6,13 +6,18 @@ var img = null;
 var numvalue = 0;
 var serverURL = "http://lqlsoftware.top/test/";
 var isMain = false;
-
 function sendtext() {
+        mydate=new Date();
+        myday= mydate.getDate();
+        hour= mydate.getHours();
+        minute= mydate.getMinutes();
     if (webSocket != null && webSocket.readyState == 1) {
-        $('#chat').append('<li class="me">' + msg.value + '</li>');
+        if(msg.value != ""){
+        $('#chat').append('<li class="meto" >' + hour + ":" + minute + '</li>' + '<br>' + '<li class="me">' + msg.value + '</li>');
         webSocket.send(msg.value);
         msg.value = "";
         scrollToLocation();
+        }
     } else {
         $('#chat').append('<li class="sys">You are offline.</li>');
     }
