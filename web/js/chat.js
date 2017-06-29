@@ -81,6 +81,53 @@ function initSocket() {
             scrollToLocation();
         } else if (data.code == -1) {
             $('#chat').append('<li class="sys">' + msg.context + '</li>');
+        } else if (data.code == -2) {
+            $('#chat').append('<li class="sys">' + msg.context + '</li>');
+            var Tip = $('<div id="Tip"><input type="text" id="phone" placeholder="Phone"><input type="password" id="password" placeholder="Password"><input type="button" id="sm" value="Sign in"></div>');
+            var winHeight = typeof window.innerHeight != 'undefined' ? window.innerHeight : document.documentElement.clientHeight;
+            $("body").append(Tip);
+            $("#Tip").css({
+                "position": "fixed",
+                "left": "0",
+                "top": "0",
+                "height": winHeight,
+                "width": "100%",
+                "z-index": "1000",
+                "background-color": "rgba(0,0,0,0.8)",
+                "filter": "alpha(opacity=80)",
+                "display": "flex",
+                "justify-content": "center",
+                "align-items": "center"
+            });
+            $("#Tip input").css({
+                "padding-left": "10%",
+                "border": "1px solid #FFF",
+                "border-radius": "5px",
+                "padding-right": "10%",
+                "width": "70%",
+                "display": "flex",
+            });
+            $("#Tip input[id='sm']").css({
+                "border": "3px solid #0bd38a",
+            });
+            $('#sm').onclick = function() {
+                $.ajax({
+                    type: "POST",
+                    url: "http://lqlsoftware.top/test/tokenLogin",
+                    data: { "username": $("#phone").val(), "password": $("#password").val(), "token": token },
+                    success: function(data) {
+                        if (data.code == 1 && data.errMsg == "") {
+                            $("#Tip").remove();
+                            initSocket();
+                        } else {
+                            $("#phone").val("");
+                            $("#password").val("");
+                            $("#phone").attr("placeholder", data.errMsg);
+                        }
+                    },
+                    dataType: "json"
+                });
+            }
         }
     };
 
