@@ -29,6 +29,8 @@ public class TokenLoginServlet extends HttpServlet {
 		
 		// 获取页面数据
 		String token = request.getParameter("token");
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
 
         // 登陆失败
         if (token == null || token.equals("")) {
@@ -39,22 +41,22 @@ public class TokenLoginServlet extends HttpServlet {
             return;
         }
 
-        TokenManager TMR = new TokenManager();
-        TokenModel TM = TMR.getToken(token);
-        if (!TMR.checkToken(TM)) {
+        boolean result = userUtil.login(username, password, new TokenManager().getToken(token));
+
+        if (result.equals(true)) {
+            JSONObject msg = new JSONObject();
+            JSONObject data = new JSONObject();
+            data.put("token", token);
+            msg.put("code", 1);
+            msg.put("data", data);
+            msg.put("errMsg", "");
+            response.getWriter().write(msg.toString());
+        } else {
             JSONObject msg = new JSONObject();
             msg.put("code", -1);
             msg.put("errMsg", "Username/Password not match.");
             response.getWriter().write(msg.toString());
             return;
         }
-
-        JSONObject msg = new JSONObject();
-        JSONObject data = new JSONObject();
-        data.put("token", token);
-        msg.put("code", 1);
-        msg.put("data", data);
-        msg.put("errMsg", "");
-        response.getWriter().write(msg.toString());
 	}
 }
