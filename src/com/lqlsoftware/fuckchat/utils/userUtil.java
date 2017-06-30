@@ -35,6 +35,31 @@ public class userUtil {
         return TM.getAuthentication();
     }
 
+    public static boolean login(String username, String password, String token) throws IOException {
+        if (username == null || password == null || token == null)
+            return null;
+
+        String id = null;
+        Connection conn = DBManager.getConnection();
+		PreparedStatement ps = null;
+        String sql = "SELECT * FROM user WHERE status=0 AND login_name=? AND password=?";
+		try {
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, username);
+			ps.setString(2, password);
+			ResultSet rs = ps.executeQuery();
+            if (!rs.next()) {
+                return false;
+            }
+            id = rs.getString("user_name");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		TokenManager TMR = 
+		TokenModel TM = TMR.createToken(id);
+        return true;
+    }
+
     public static boolean findUserByName(String username) throws IOException {
         if (username == null || username.equals(""))
             return false;

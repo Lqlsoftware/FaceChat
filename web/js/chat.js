@@ -6,17 +6,18 @@ var img = null;
 var numvalue = 0;
 var serverURL = "http://lqlsoftware.top/test/";
 var isMain = false;
+
 function sendtext() {
-        mydate=new Date();
-        myday= mydate.getDate();
-        hour= mydate.getHours();
-        minute= mydate.getMinutes();
+    mydate = new Date();
+    myday = mydate.getDate();
+    hour = mydate.getHours();
+    minute = mydate.getMinutes();
     if (webSocket != null && webSocket.readyState == 1) {
-        if(msg.value != ""){
-        $('#chat').append('<li class="meto" >' + hour + ":" + minute + '</li>' + '<br>' + '<li class="me">' + msg.value + '</li>');
-        webSocket.send(msg.value);
-        msg.value = "";
-        scrollToLocation();
+        if (msg.value != "") {
+            $('#chat').append('<li class="meto" >' + hour + ":" + minute + '</li>' + '<br>' + '<li class="me">' + msg.value + '</li>');
+            webSocket.send(msg.value);
+            msg.value = "";
+            scrollToLocation();
         }
     } else {
         $('#chat').append('<li class="sys">You are offline.</li>');
@@ -216,11 +217,3 @@ function uploadComplete(evt) {
     /* 服务器端返回响应时候触发event事件*/
     numvalue = 0;
 }
-//
-// function uploadFailed(evt) {
-//     alert("There was an error attempting to upload the file.");
-// }
-//
-// function uploadCanceled(evt) {
-//     alert("The upload has been canceled by the user or the browser dropped the connection.");
-// }

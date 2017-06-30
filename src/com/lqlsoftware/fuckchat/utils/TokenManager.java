@@ -44,17 +44,28 @@ public class TokenManager implements ITokenManager {
         }
         setRedis();
         String token = jedis.get(model.getUserId());
-        if (token == null || !token.equals (model.getToken ())) {
+        if (token == null || !token.equals(model.getToken ())) {
             return false;
         }
         // 如果验证成功，说明此用户进行了一次有效操作，延长 token 的过期时间
-		jedis.expireAt(model.getUserId (),sessionExpireTime);
+		jedis.expireAt(model.getUserId(),sessionExpireTime);
 		jedis.close();
         return true;
     }
     public void deleteToken (String userId) {
     	setRedis();
-        jedis.del (userId);
+        jedis.del(userId);
+        jedis.close();
+    }
+
+    public boolean addToken (String userId, TokenModel model) {
+    	setRedis();
+        String token = jedis.get(model.getUserId());
+        if (token != null && !token.equals(model.getToken())) {
+            jedis.del(userId);
+        }
+        jedis.set(userId, model.getToken());
+		jedis.expireAt(userId,sessionExpireTime);
         jedis.close();
     }
 }
