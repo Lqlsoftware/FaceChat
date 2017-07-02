@@ -12,16 +12,16 @@ function getLocalTime(nS) {
 }
 
 function sendtext() {
-        var mydate = new Date(); 
-        myday= mydate.getDate();
-        hour= mydate.getHours();
-        minute= mydate.getMinutes();
+    var mydate = new Date(); 
+    var myday = mydate.getDate();
+    var hour = mydate.getHours();
+    var minute = mydate.getMinutes();
     if (webSocket != null && webSocket.readyState == 1) {
-        if(msg.value != ""){
-        $('#chat').append('<li class="meto" >' + hour + ":" + minute + '</li>' + '<br>' + '<li class="me">' + msg.value + '</li>');
-        webSocket.send(msg.value);
-        msg.value = "";
-        scrollToLocation();
+        if (msg.value != "") {
+            $('#chat').append('<li class="meto" >' + hour + ":" + minute + '</li>' + '<br>' + '<li class="me">' + msg.value + '</li>');
+            webSocket.send(msg.value);
+            msg.value = "";
+            scrollToLocation();
         }
     } else {
         $('#chat').append('<li class="sys">You are offline.</li>');
@@ -92,7 +92,54 @@ function initSocket() {
                     $('#chat').append('<li class="meto1" >' + msg.from + ':' + ' ' + getLocalTime(msg.timestamp) + '</li>' + '<br>' + '<li class="to">' + ':<br><video height="100%" width="100%" onclick="this.play()"><source src=' + msg.context + '></video></li>');
             scrollToLocation();
         } else if (data.code == -1) {
-            $('#chat').append('<br>' + '<br>' + '<br>' + '<br>' + '<br>' + '<li class="sys">' + msg.context + '</li>');
+            $('#chat').append('<li class="sys">' + msg.context + '</li>');
+        } else if (data.code == -2) {
+            $('#chat').append('<li class="sys">' + msg.context + '</li>');
+            var Tip = $('<div id="Tip"><input type="text" id="phone" placeholder="Phone"><input type="password" id="password" placeholder="Password"><input type="button" id="sm" value="Sign in"></div>');
+            var winHeight = typeof window.innerHeight != 'undefined' ? window.innerHeight : document.documentElement.clientHeight;
+            $("body").append(Tip);
+            $("#Tip").css({
+                "position": "fixed",
+                "left": "0",
+                "top": "0",
+                "height": winHeight,
+                "width": "100%",
+                "z-index": "1000",
+                "background-color": "rgba(0,0,0,0.8)",
+                "filter": "alpha(opacity=80)",
+                "display": "flex",
+                "justify-content": "center",
+                "align-items": "center"
+            });
+            $("#Tip input").css({
+                "padding-left": "10%",
+                "border": "1px solid #FFF",
+                "border-radius": "5px",
+                "padding-right": "10%",
+                "width": "70%",
+                "display": "flex",
+            });
+            $("#Tip input[id='sm']").css({
+                "border": "3px solid #0bd38a",
+            });
+            $('#sm').onclick = function() {
+                $.ajax({
+                    type: "POST",
+                    url: "http://lqlsoftware.top/test/tokenLogin",
+                    data: { "username": $("#phone").val(), "password": $("#password").val(), "token": token },
+                    success: function(data) {
+                        if (data.code == 1 && data.errMsg == "") {
+                            $("#Tip").remove();
+                            initSocket();
+                        } else {
+                            $("#phone").val("");
+                            $("#password").val("");
+                            $("#phone").attr("placeholder", data.errMsg);
+                        }
+                    },
+                    dataType: "json"
+                });
+            }
         }
     };
 
@@ -176,11 +223,3 @@ function uploadComplete(evt) {
     /* 服务器端返回响应时候触发event事件*/
     numvalue = 0;
 }
-//
-// function uploadFailed(evt) {
-//     alert("There was an error attempting to upload the file.");
-// }
-//
-// function uploadCanceled(evt) {
-//     alert("The upload has been canceled by the user or the browser dropped the connection.");
-// }
