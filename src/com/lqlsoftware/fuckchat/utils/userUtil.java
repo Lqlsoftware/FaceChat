@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import com.alibaba.fastjson.JSONObject;
 import com.lqlsoftware.fuckchat.dao.DBManager;
 
 public class userUtil {
@@ -37,7 +38,7 @@ public class userUtil {
 
     public static boolean login(String username, String password, String token) throws IOException {
         if (username == null || password == null || token == null)
-            return null;
+            return false;
 
         String id = null;
         Connection conn = DBManager.getConnection();
@@ -55,8 +56,7 @@ public class userUtil {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		TokenManager TMR = 
-		TokenModel TM = TMR.createToken(id);
+		new TokenManager().createToken(id);
         return true;
     }
 
@@ -98,5 +98,33 @@ public class userUtil {
             return false;
         }
         return true;
+    }
+
+    public static String getUserSetting(String username) throws IOException {
+        if (username == null)
+            return null;
+        String background = "";
+        String head = "";
+        Connection conn = DBManager.getConnection();
+        PreparedStatement ps;
+        String sql = "SELECT * FROM user_setting JOIN user WHERE user.login_name=? AND user.id = user_setting.id";
+        try {
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, username);
+            ResultSet rs = ps.executeQuery();
+            if (!rs.next()) {
+                return null;
+            }
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        JSONObject setting = new JSONObject();
+        setting.put("background",background);
+        setting.put("head",head);
+
+        return setting.toString();
     }
 }

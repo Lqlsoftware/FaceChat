@@ -2,7 +2,6 @@ package com.lqlsoftware.fuckchat.servlet;
 
 import com.alibaba.fastjson.JSONObject;
 import com.lqlsoftware.fuckchat.utils.TokenManager;
-import com.lqlsoftware.fuckchat.utils.TokenModel;
 import com.lqlsoftware.fuckchat.utils.userUtil;
 
 import javax.servlet.ServletException;
@@ -41,9 +40,9 @@ public class TokenLoginServlet extends HttpServlet {
             return;
         }
 
-        boolean result = userUtil.login(username, password, new TokenManager().getToken(token));
+        boolean result = userUtil.login(username, password, new TokenManager().getToken(token).getAuthentication());
 
-        if (result.equals(true)) {
+        if (result == true) {
             JSONObject msg = new JSONObject();
             JSONObject data = new JSONObject();
             data.put("token", token);
