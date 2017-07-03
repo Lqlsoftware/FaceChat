@@ -49,7 +49,10 @@ function initSocket() {
     webSocket.onmessage = function(res) {
         var data = JSON.parse(res.data);
         var msg = data.data;
-        if (data.code == 1) {
+        if (data.code == 2) {
+            var background = msg.background;
+            var myHead =  msg.head;
+        } else if (data.code == 1) {
             if (msg.type == "text")
                 if (msg.from == id)
                     $('#chat').append('<li class="me"><span class="head"></span>' + msg.context + '</li>');
