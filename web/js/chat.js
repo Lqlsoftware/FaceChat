@@ -51,7 +51,7 @@ function initSocket() {
         var msg = data.data;
         if (data.code == 2) {
             var background = msg.background;
-            var myHead =  msg.head;
+            var myHead = msg.head;
         } else if (data.code == 1) {
             if (msg.type == "text")
                 if (msg.from == id)
@@ -87,6 +87,11 @@ function initSocket() {
                     }
                 } else
                     $('#chat').append('<li class="to">' + msg.from + ':<br><video height="100%" width="100%" onclick="this.play()"><source src=' + msg.context + '></video></li>');
+            else if (msg.type == "setting") {
+                $('.convo').css({
+                    "background": msg.background
+                })
+            }
             scrollToLocation();
         } else if (data.code == -1) {
             $('#chat').append('<li class="sys">' + msg.context + '</li>');
