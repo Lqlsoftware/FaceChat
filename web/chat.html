@@ -33,9 +33,9 @@
         </div>
     </div>
     <div class="input-area">
-        <input class="image" id="amsg" type="submit" onclick="img.click();" value="图">
+        <div class="image" id="amsg" onclick="img.click();">图</div>
         <textarea class="input" id="msg" onkeydown="if(event.keyCode==13){sendtext();event.preventDefault();}"></textarea>
-        <input type="submit" class="send" onclick="sendtext();" value="SEND">
+        <div class="send" onclick="sendtext();">SEND</div>
     </div>
     <input type="file" accept="image/*,video/mp4,video/mpg,video/ogg" id="img" name="img" style="visibility:hidden">
     <div id="lightbox_mask"></div>

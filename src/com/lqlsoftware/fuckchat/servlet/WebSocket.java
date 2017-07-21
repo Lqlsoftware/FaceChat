@@ -44,6 +44,7 @@ public class WebSocket {
 			return;
 		}
 		SessionUtil.put(TM.getUserId(), session);
+		SocketUtil.sendTo(msgUtil.getSysMsg(2, userUtil.getUserSetting(TM.getUserId()), ""), TM.getUserId());
 		msgUtil.sendHistoryMsg(TM.getUserId());
 		SocketUtil.broadcast(msgUtil.getSysMsg(-1, "欢迎小伙伴 " + TM.getUserId() + " 来到FuckChat", ""));
 		System.out.println(TM.getUserId() + " online");
