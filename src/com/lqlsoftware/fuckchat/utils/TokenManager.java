@@ -67,5 +67,7 @@ public class TokenManager implements ITokenManager {
         jedis.set(userId, model.getToken());
 		jedis.expireAt(userId,sessionExpireTime);
         jedis.close();
+
+        return true;
     }
 }

@@ -4,7 +4,7 @@ var token = GetQueryString('token');
 var id = token.split("_")[0];
 var img = null;
 var numvalue = 0;
-var serverURL = "http://lqlsoftware.top/test/";
+var serverURL = "http://localhost:8080/FuckChat/";
 var isMain = false;
 
 function getLocalTime(nS) {     
@@ -92,16 +92,12 @@ function initSocket() {
                         target.attr('id', '');
                     }
                 } else
-<<<<<<< HEAD
-                    $('#chat').append('<li class="to">' + msg.from + ':<br><video height="100%" width="100%" onclick="this.play()"><source src=' + msg.context + '></video></li>');
+                    $('#chat').append('<li class="meto1" >' + msg.from + ':' + ' ' + getLocalTime(msg.timestamp) + '</li><br><li class="to">' + ':<br><video height="100%" width="100%" onclick="this.play()"><source src=' + msg.context + '></video></li>');
             else if (msg.type == "setting") {
                 $('.convo').css({
                     "background": msg.background
                 })
             }
-=======
-                    $('#chat').append('<li class="meto1" >' + msg.from + ':' + ' ' + getLocalTime(msg.timestamp) + '</li>' + '<br>' + '<li class="to">' + ':<br><video height="100%" width="100%" onclick="this.play()"><source src=' + msg.context + '></video></li>');
->>>>>>> dev
             scrollToLocation();
         } else if (data.code == -1) {
             $('#chat').append('<li class="sys">' + msg.context + '</li>');

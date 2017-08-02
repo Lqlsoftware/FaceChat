@@ -8,7 +8,7 @@ function login() {
     if ($("#id").val() != '' && $("#pw").val() != '') {
         $.ajax({
             type: "POST",
-            url: "http://lqlsoftware.top/test/login",
+            url: "login",
             data: { "username": $("#id").val(), "password": $("#pw").val() },
             success: function(data) {
                 if (data.errMsg == "")

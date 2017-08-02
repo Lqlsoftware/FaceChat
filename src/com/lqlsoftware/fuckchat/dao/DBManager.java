@@ -16,7 +16,7 @@ public class DBManager {
     private static String userName = "root";
 
     // 数据库的用户密码
-    private static String userPassword = "123456";
+    private static String userPassword = "Lqlluyuli123";
 
     public static String getDriver() {
         return driver;

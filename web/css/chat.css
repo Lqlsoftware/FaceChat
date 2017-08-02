@@ -34,6 +34,7 @@ body {
 }
 
 .input-area .image {
+    display: inline-block;
     background: none;
     width: 8%;
     margin: 10px 10px -17px 1px;
@@ -43,12 +44,14 @@ body {
     border-left: 2px solid #0AD5C1;
     border-right: 2px solid #0AD5C1;
     border-top: 2px solid #0AD5C1;
+    padding-top: 10px;
     height: 33px;
     color: #0AD5C1;
     clear: both;
 }
 
 .input-area .input {
+    display: inline-block;
     background: none;
     width: 50%;
     margin: 10px 10px -17px 1px;
@@ -66,10 +69,11 @@ body {
 }
 
 .input-area .send {
+    display: inline-block;
     background: none;
     width: 15%;
     margin: 10px 10px -17px 1px;
-    padding: 0px 0px 0px 0px;
+    padding: 10px 0px 0px 0px;
     border: 0px;
     border-radius: 10px;
     border-bottom: 2px solid #0AD5C1;
@@ -142,13 +146,17 @@ body {
 .chat-thread .sys {
     line-height: 0px;
     float: none;
-    height: 1px;
+    height: 10px;
     width: 90%;
     padding-right: 25px;
+    margin-top: 5px;
     animation: sys 0.15s 1 ease-in;
     -moz-animation: sys 0.15s 1 ease-in;
     -webkit-animation: sys 0.15s 1 ease-in;
     color: #0AD5C1;
+    background-color: rgba(25, 147, 147, 0.2);
+    text-align: center;
+    padding-top: 10px;
 }
 
 .chat-thread .me {
