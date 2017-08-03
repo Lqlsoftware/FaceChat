@@ -7,16 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25d1afd8-503c-4d79-a870-4605bf2a2337" name="默认的" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FuckChat/com/lqlsoftware/fuckchat/servlet/TokenLoginServlet.class" afterPath="$PROJECT_DIR$/out/production/FuckChat/com/lqlsoftware/fuckchat/servlet/TokenLoginServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FuckChat/com/lqlsoftware/fuckchat/servlet/WebSocket.class" afterPath="$PROJECT_DIR$/out/production/FuckChat/com/lqlsoftware/fuckchat/servlet/WebSocket.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FuckChat/com/lqlsoftware/fuckchat/utils/TokenManager.class" afterPath="$PROJECT_DIR$/out/production/FuckChat/com/lqlsoftware/fuckchat/utils/TokenManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FuckChat/com/lqlsoftware/fuckchat/utils/msgUtil.class" afterPath="$PROJECT_DIR$/out/production/FuckChat/com/lqlsoftware/fuckchat/utils/msgUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FuckChat/com/lqlsoftware/fuckchat/utils/userUtil.class" afterPath="$PROJECT_DIR$/out/production/FuckChat/com/lqlsoftware/fuckchat/utils/userUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/dao/DBManager.java" afterPath="$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/dao/DBManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/utils/TokenManager.java" afterPath="$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/utils/TokenManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/chat.css" afterPath="$PROJECT_DIR$/web/css/chat.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/app.js" afterPath="$PROJECT_DIR$/web/js/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/chat.js" afterPath="$PROJECT_DIR$/web/js/chat.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -29,17 +19,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="chat.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="chat.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/js/chat.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="48" lean-forward="false" selection-start-line="6" selection-start-column="48" selection-end-line="6" selection-end-column="48" />
+            <state relative-caret-position="-2169">
+              <caret line="63" column="73" lean-forward="false" selection-start-line="63" selection-start-column="61" selection-end-line="63" selection-end-column="73" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="chat.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="chat.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/css/chat.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="31">
@@ -166,8 +156,8 @@
         <option value="$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/utils/TokenManager.java" />
         <option value="$PROJECT_DIR$/web/js/app.js" />
         <option value="$PROJECT_DIR$/src/com/lqlsoftware/fuckchat/dao/DBManager.java" />
-        <option value="$PROJECT_DIR$/web/js/chat.js" />
         <option value="$PROJECT_DIR$/web/css/chat.css" />
+        <option value="$PROJECT_DIR$/web/js/chat.js" />
       </list>
     </option>
   </component>
@@ -773,16 +763,15 @@
       <workItem from="1497940764911" duration="2322000" />
       <workItem from="1498108280910" duration="1710000" />
       <workItem from="1498449960584" duration="893000" />
-      <workItem from="1501677906281" duration="1482000" />
+      <workItem from="1501677906281" duration="1714000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16879000" />
+    <option name="totallyTimeSpent" value="17111000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -795,7 +784,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="消息" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933334" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32933334" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933334" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="控制板" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1175,18 +1164,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/chat.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="48" lean-forward="false" selection-start-line="6" selection-start-column="48" selection-end-line="6" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/css/chat.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="31">
           <caret line="143" column="1" lean-forward="true" selection-start-line="143" selection-start-column="1" selection-end-line="143" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/chat.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2169">
+          <caret line="63" column="73" lean-forward="false" selection-start-line="63" selection-start-column="61" selection-end-line="63" selection-end-column="73" />
           <folding />
         </state>
       </provider>
