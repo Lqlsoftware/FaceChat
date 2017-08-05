@@ -56,8 +56,16 @@ function initSocket() {
         var data = JSON.parse(res.data);
         var msg = data.data;
         if (data.code == 2) {
-            var background = msg.background;
-            var myHead = msg.head;
+            var background = msg.context.background;
+            var myHead = msg.context.head;
+            $('#convo').css({
+                "background": "url(bg/" + background + ") no-repeat",
+                "background-size": "100% auto",
+                "background-position": "center",
+                "background-color": "none"
+            })
+            $("<style type='text/css' id='dynamic-before' />").appendTo("head");
+            $("#dynamic-before").text(".chat-thread .meto:before{background-image: url(bg/" + myHead + ") no-repeat;}");
         } else if (data.code == 1) {
             if (msg.type == "text")
                 if (msg.from == id)
@@ -76,12 +84,12 @@ function initSocket() {
                     }
                 } else
                     $('#chat').append('<li class="meto1" >' + msg.from + ' ' + getLocalTime(msg.timestamp) + '</li>' + '<br>' + '<li class="to">' + ':<br><img src=' + msg.context + ' class="img" data-source="' + msg.context + '"></li>');
-                $(function() {
+                $(function () {
                     $('#lightbox').lightbox({
                         ifChange: true
                     });
                 });
-            } else if (msg.type == "vid")
+            } else if (msg.type == "vid") {
                 if (msg.from == id) {
                     var target = $('#chat').find('#uploading:first');
                     if (!target[0])
@@ -93,10 +101,6 @@ function initSocket() {
                     }
                 } else
                     $('#chat').append('<li class="meto1" >' + msg.from + ' ' + getLocalTime(msg.timestamp) + '</li><br><li class="to">' + ':<br><video height="100%" width="100%" onclick="this.play()"><source src=' + msg.context + '></video></li>');
-            else if (msg.type == "setting") {
-                $('.convo').css({
-                    "background": msg.background
-                })
             }
             scrollToLocation();
         } else if (data.code == -1) {

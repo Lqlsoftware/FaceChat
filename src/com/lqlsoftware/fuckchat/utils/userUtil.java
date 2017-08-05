@@ -107,24 +107,22 @@ public class userUtil {
         String head = "";
         Connection conn = DBManager.getConnection();
         PreparedStatement ps;
-        String sql = "SELECT * FROM user_setting JOIN user WHERE user.login_name=? AND user.id = user_setting.id";
+        String sql = "SELECT * FROM user_setting JOIN user WHERE user.user_name=? AND user.id = user_setting.id";
         try {
             ps = conn.prepareStatement(sql);
             ps.setString(1, username);
             ResultSet rs = ps.executeQuery();
-            if (!rs.next()) {
-                return null;
+            if (rs.next()) {
+                background = rs.getString("background");
+                head = rs.getString("head");
             }
-
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
         JSONObject setting = new JSONObject();
-        setting.put("background",background);
-        setting.put("head",head);
-
+        setting.put("background", background);
+        setting.put("head", head);
         return setting.toString();
     }
 }

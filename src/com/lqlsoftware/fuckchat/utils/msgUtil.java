@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.lqlsoftware.fuckchat.dao.DBManager;
 
@@ -30,7 +31,10 @@ public class msgUtil {
         JSONObject data = new JSONObject();
         data.put("from", "system");
         data.put("type", "text");
-        data.put("context", context);
+        if (code == 2)
+        	data.put("context", JSONObject.parse(context));
+        else
+        	data.put("context", context);
         data.put("timestamp", new Date().getTime());
         msg.put("data", data);
         msg.put("code", code);
