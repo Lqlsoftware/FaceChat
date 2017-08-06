@@ -64,8 +64,8 @@ function initSocket() {
                 "background-position": "center",
                 "background-color": "none"
             })
-            $("<style type='text/css' id='dynamic-before' />").appendTo("head");
-            $("#dynamic-before").text(".chat-thread .meto:before{background-image: url(bg/" + myHead + ") no-repeat;}");
+            $('<style>.meto::before{background-image:url(bg/' + myHead + ')}</style>').appendTo('head');
+
         } else if (data.code == 1) {
             if (msg.type == "text")
                 if (msg.from == id)
