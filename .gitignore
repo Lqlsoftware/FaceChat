@@ -32,3 +32,4 @@ out/
 
 # End of https://www.gitignore.io/api/java,java-web
 .idea/workspace.xml
+.idea/workspace.xml

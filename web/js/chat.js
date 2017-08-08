@@ -18,7 +18,7 @@ function sendtext() {
     var minute = mydate.getMinutes();
     if (webSocket != null && webSocket.readyState == 1) {
         if (msg.value != "") {
-            $('#chat').append('<li class="meto" >' + hour + ":" + minute + '</li>' + '<br>' + '<li class="me">' + msg.value + '</li>');
+            $('#chat').append('<li class="meto" >' + getLocalTime(mydate.getTime()) + '</li>' + '<br>' + '<li class="me" time="' + mydate.getTime() + '">' + msg.value + '</li>');
             webSocket.send(msg.value);
             msg.value = "";
             scrollToLocation();
@@ -67,23 +67,27 @@ function initSocket() {
             $('<style>.meto::before{background-image:url(bg/' + myHead + ')}</style>').appendTo('head');
 
         } else if (data.code == 1) {
+            var time_difference = msg.timestamp - $('#chat').find('li:last').attr("time");
+            var time_show = false;
+            if (time_difference >= 1800000) time_show = true;
+            console.log(time_show);
             if (msg.type == "text")
                 if (msg.from == id)
-                    $('#chat').append('<li class="meto" >' + getLocalTime(msg.timestamp) + '</li>' + '<br>' + '<li class="me"><span class="head"></span>' + msg.context + '</li>');
+                    $('#chat').append('<li class="meto" >' + getLocalTime(msg.timestamp) + '</li>' + '<br>' + '<li class="me" time="' + msg.timestamp + '"><span class="head"></span>' + msg.context + '</li>');
                 else
-                    $('#chat').append('<li class="meto1" >' + msg.from + ' ' + getLocalTime(msg.timestamp) + '</li>' + '<br>' + '<li class="to"><span class="head"></span>' + msg.context + '</li>');
+                    $('#chat').append('<li class="meto1" >' + msg.from + ' ' + getLocalTime(msg.timestamp) + '</li>' + '<br>' + '<li class="to" time="' + msg.timestamp + '"><span class="head"></span>' + msg.context + '</li>');
             else if (msg.type == "img") {
                 if (msg.from == id) {
                     var target = $('#chat').find('#uploading:first');
                     if (!target[0])
-                        $('#chat').append('<li class="meto" >' + getLocalTime(msg.timestamp) + '</li>' + '<br>' + '<li class="me"><img src=' + msg.context + ' class="img" data-source="' + msg.context + '"></li>');
+                        $('#chat').append('<li class="meto" >' + getLocalTime(msg.timestamp) + '</li>' + '<br>' + '<li class="me" time="' + msg.timestamp + '"><img src=' + msg.context + ' class="img" data-source="' + msg.context + '"></li>');
                     else {
                         target.empty();
-                        target.append('<li class="meto" >' + getLocalTime(msg.timestamp) + '</li>' + '<br>' + '<img src=' + msg.context + ' class="img" data-source="' + msg.context + '">');
+                        target.append('<li class="meto" time="' + msg.timestamp + '">' + getLocalTime(msg.timestamp) + '</li>' + '<br>' + '<img src=' + msg.context + ' class="img" data-source="' + msg.context + '">');
                         target.attr('id', '');
                     }
                 } else
-                    $('#chat').append('<li class="meto1" >' + msg.from + ' ' + getLocalTime(msg.timestamp) + '</li>' + '<br>' + '<li class="to">' + ':<br><img src=' + msg.context + ' class="img" data-source="' + msg.context + '"></li>');
+                    $('#chat').append('<li class="meto1" >' + msg.from + ' ' + getLocalTime(msg.timestamp) + '</li>' + '<br>' + '<li class="to" time="' + msg.timestamp + '">' + ':<br><img src=' + msg.context + ' class="img" data-source="' + msg.context + '"></li>');
                 $(function () {
                     $('#lightbox').lightbox({
                         ifChange: true
@@ -93,14 +97,14 @@ function initSocket() {
                 if (msg.from == id) {
                     var target = $('#chat').find('#uploading:first');
                     if (!target[0])
-                        $('#chat').append('<li class="meto" >' + getLocalTime(msg.timestamp) + '</li>' + '<br>' + '<li class="me"><video height="100%" width="100%" onclick="this.play()"><source src=' + msg.context + '></video></li>');
+                        $('#chat').append('<li class="meto" >' + getLocalTime(msg.timestamp) + '</li>' + '<br>' + '<li class="me" time="' + msg.timestamp + '"><video height="100%" width="100%" onclick="this.play()"><source src=' + msg.context + '></video></li>');
                     else {
                         target.empty();
                         target.append('<video height="100%" width="100%" onclick="this.play()"><source src=' + msg.context + '></video>');
                         target.attr('id', '');
                     }
                 } else
-                    $('#chat').append('<li class="meto1" >' + msg.from + ' ' + getLocalTime(msg.timestamp) + '</li><br><li class="to">' + ':<br><video height="100%" width="100%" onclick="this.play()"><source src=' + msg.context + '></video></li>');
+                    $('#chat').append('<li class="meto1" >' + msg.from + ' ' + getLocalTime(msg.timestamp) + '</li><br><li class="to" time="' + msg.timestamp + '">' + ':<br><video height="100%" width="100%" onclick="this.play()"><source src=' + msg.context + '></video></li>');
             }
             scrollToLocation();
         } else if (data.code == -1) {
