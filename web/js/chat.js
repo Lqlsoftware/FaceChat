@@ -231,7 +231,7 @@ function uploadProgress(evt) {
             value: numvalue
         });
     } else {
-        document.getElementById('uploading').innerHTML = 'unable to compute';
+        document.getElementById('uploading').innerHTML = '上传失败';
     }
 }
 
