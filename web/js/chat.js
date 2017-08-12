@@ -43,6 +43,114 @@ function scrollToLocation() {
     );
 }
 
+function setUserConfig(config) {
+    var background = config.background;
+    var myHead = config.head;
+    $('#convo').css({
+        "background": "url(bg/" + background + ") no-repeat",
+        "background-size": "100% auto",
+        "background-position": "center",
+        "background-color": "none"
+    })
+    $('<style>.me::before{background-image:url(bg/' + myHead + ')}</style>').appendTo('head');
+}
+
+function onMessage(msg) {
+    var time_difference = msg.timestamp - $('#chat').find('li:last').attr("time");
+    var time_show = false;
+    if (time_difference >= 1800000) time_show = true;
+    console.log(time_show);
+    if (msg.type == "text")
+        if (msg.from == id)
+            $('#chat').append('<li class="me" >' + getLocalTime(msg.timestamp) + '</li>' + '<br>' + '<li class="me" time="' + msg.timestamp + '"><span class="head"></span>' + msg.context + '</li>');
+        else
+            $('#chat').append('<li class="from" >' + msg.from + ' ' + getLocalTime(msg.timestamp) + '</li>' + '<br>' + '<li class="to" time="' + msg.timestamp + '"><span class="head"></span>' + msg.context + '</li>');
+    else if (msg.type == "img") {
+        if (msg.from == id) {
+            var target = $('#chat').find('#uploading:first');
+            if (!target[0])
+                $('#chat').append('<li class="me" >' + getLocalTime(msg.timestamp) + '</li>' + '<br>' + '<li class="me" time="' + msg.timestamp + '"><img src=' + msg.context + ' class="img" data-source="' + msg.context + '"></li>');
+            else {
+                target.empty();
+                target.append('<li class="me" time="' + msg.timestamp + '">' + getLocalTime(msg.timestamp) + '</li>' + '<br>' + '<img src=' + msg.context + ' class="img" data-source="' + msg.context + '">');
+                target.attr('id', '');
+            }
+        } else
+            $('#chat').append('<li class="from" >' + msg.from + ' ' + getLocalTime(msg.timestamp) + '</li>' + '<br>' + '<li class="to" time="' + msg.timestamp + '">' + ':<br><img src=' + msg.context + ' class="img" data-source="' + msg.context + '"></li>');
+        $(function() {
+            $('#lightbox').lightbox({
+                ifChange: true
+            });
+        });
+    } else if (msg.type == "vid") {
+        if (msg.from == id) {
+            var target = $('#chat').find('#uploading:first');
+            if (!target[0])
+                $('#chat').append('<li class="me" >' + getLocalTime(msg.timestamp) + '</li>' + '<br>' + '<li class="me" time="' + msg.timestamp + '"><video height="100%" width="100%" onclick="this.play()"><source src=' + msg.context + '></video></li>');
+            else {
+                target.empty();
+                target.append('<video height="100%" width="100%" onclick="this.play()"><source src=' + msg.context + '></video>');
+                target.attr('id', '');
+            }
+        } else
+            $('#chat').append('<li class="from" >' + msg.from + ' ' + getLocalTime(msg.timestamp) + '</li><br><li class="to" time="' + msg.timestamp + '">' + ':<br><video height="100%" width="100%" onclick="this.play()"><source src=' + msg.context + '></video></li>');
+    }
+    scrollToLocation();
+}
+
+function onSysMessage(data) {
+    if (data.code == -1) {
+        $('#chat').append('<li class="sys">' + msg.context + '</li>');
+    } else if (data.code == -2) {
+        $('#chat').append('<li class="sys">' + msg.context + '</li>');
+        var Tip = $('<div id="Tip"><input type="text" id="phone" placeholder="Phone"><input type="password" id="password" placeholder="Password"><input type="button" id="sm" value="Sign in"></div>');
+        var winHeight = typeof window.innerHeight != 'undefined' ? window.innerHeight : document.documentElement.clientHeight;
+        $("body").append(Tip);
+        $("#Tip").css({
+            "position": "fixed",
+            "left": "0",
+            "top": "0",
+            "height": winHeight,
+            "width": "100%",
+            "z-index": "1000",
+            "background-color": "rgba(0,0,0,0.8)",
+            "filter": "alpha(opacity=80)",
+            "display": "flex",
+            "justify-content": "center",
+            "align-items": "center"
+        });
+        $("#Tip input").css({
+            "padding-left": "10%",
+            "border": "1px solid #FFF",
+            "border-radius": "5px",
+            "padding-right": "10%",
+            "width": "70%",
+            "display": "flex",
+        });
+        $("#Tip input[id='sm']").css({
+            "border": "3px solid #0bd38a",
+        });
+        $('#sm').onclick = function() {
+            $.ajax({
+                type: "POST",
+                url: "http://lqlsoftware.top/test/tokenLogin",
+                data: { "username": $("#phone").val(), "password": $("#password").val(), "token": token },
+                success: function(data) {
+                    if (data.code == 1 && data.errMsg == "") {
+                        $("#Tip").remove();
+                        initSocket();
+                    } else {
+                        $("#phone").val("");
+                        $("#password").val("");
+                        $("#phone").attr("placeholder", data.errMsg);
+                    }
+                },
+                dataType: "json"
+            });
+        }
+    }
+}
+
 function initSocket() {
     var mydate = new Date();
     var daytime = mydate.getTime();
@@ -50,139 +158,50 @@ function initSocket() {
         alert("您的浏览器不支持websocket！");
         return false;
     }
+
     webSocket = new WebSocket('ws://' + serverURL.split('//')[1] + "chat/" + token);
 
     webSocket.onmessage = function(res) {
         var data = JSON.parse(res.data);
         var msg = data.data;
+
         if (data.code == 2) {
-            var background = msg.context.background;
-            var myHead = msg.context.head;
-            $('#convo').css({
-                "background": "url(bg/" + background + ") no-repeat",
-                "background-size": "100% auto",
-                "background-position": "center",
-                "background-color": "none"
-            })
-            $('<style>.me::before{background-image:url(bg/' + myHead + ')}</style>').appendTo('head');
-
+            // 用户个人设置
+            setUserConfig(msg.context);
         } else if (data.code == 1) {
-            var time_difference = msg.timestamp - $('#chat').find('li:last').attr("time");
-            var time_show = false;
-            if (time_difference >= 1800000) time_show = true;
-            console.log(time_show);
-            if (msg.type == "text")
-                if (msg.from == id)
-                    $('#chat').append('<li class="me" >' + getLocalTime(msg.timestamp) + '</li>' + '<br>' + '<li class="me" time="' + msg.timestamp + '"><span class="head"></span>' + msg.context + '</li>');
-                else
-                    $('#chat').append('<li class="from" >' + msg.from + ' ' + getLocalTime(msg.timestamp) + '</li>' + '<br>' + '<li class="to" time="' + msg.timestamp + '"><span class="head"></span>' + msg.context + '</li>');
-            else if (msg.type == "img") {
-                if (msg.from == id) {
-                    var target = $('#chat').find('#uploading:first');
-                    if (!target[0])
-                        $('#chat').append('<li class="me" >' + getLocalTime(msg.timestamp) + '</li>' + '<br>' + '<li class="me" time="' + msg.timestamp + '"><img src=' + msg.context + ' class="img" data-source="' + msg.context + '"></li>');
-                    else {
-                        target.empty();
-                        target.append('<li class="me" time="' + msg.timestamp + '">' + getLocalTime(msg.timestamp) + '</li>' + '<br>' + '<img src=' + msg.context + ' class="img" data-source="' + msg.context + '">');
-                        target.attr('id', '');
-                    }
-                } else
-                    $('#chat').append('<li class="from" >' + msg.from + ' ' + getLocalTime(msg.timestamp) + '</li>' + '<br>' + '<li class="to" time="' + msg.timestamp + '">' + ':<br><img src=' + msg.context + ' class="img" data-source="' + msg.context + '"></li>');
-                $(function() {
-                    $('#lightbox').lightbox({
-                        ifChange: true
-                    });
-                });
-            } else if (msg.type == "vid") {
-                if (msg.from == id) {
-                    var target = $('#chat').find('#uploading:first');
-                    if (!target[0])
-                        $('#chat').append('<li class="me" >' + getLocalTime(msg.timestamp) + '</li>' + '<br>' + '<li class="me" time="' + msg.timestamp + '"><video height="100%" width="100%" onclick="this.play()"><source src=' + msg.context + '></video></li>');
-                    else {
-                        target.empty();
-                        target.append('<video height="100%" width="100%" onclick="this.play()"><source src=' + msg.context + '></video>');
-                        target.attr('id', '');
-                    }
-                } else
-                    $('#chat').append('<li class="from" >' + msg.from + ' ' + getLocalTime(msg.timestamp) + '</li><br><li class="to" time="' + msg.timestamp + '">' + ':<br><video height="100%" width="100%" onclick="this.play()"><source src=' + msg.context + '></video></li>');
-            }
-            scrollToLocation();
-        } else if (data.code == -1) {
-            $('#chat').append('<li class="sys">' + msg.context + '</li>');
-        } else if (data.code == -2) {
-            $('#chat').append('<li class="sys">' + msg.context + '</li>');
-            var Tip = $('<div id="Tip"><input type="text" id="phone" placeholder="Phone"><input type="password" id="password" placeholder="Password"><input type="button" id="sm" value="Sign in"></div>');
-            var winHeight = typeof window.innerHeight != 'undefined' ? window.innerHeight : document.documentElement.clientHeight;
-            $("body").append(Tip);
-            $("#Tip").css({
-                "position": "fixed",
-                "left": "0",
-                "top": "0",
-                "height": winHeight,
-                "width": "100%",
-                "z-index": "1000",
-                "background-color": "rgba(0,0,0,0.8)",
-                "filter": "alpha(opacity=80)",
-                "display": "flex",
-                "justify-content": "center",
-                "align-items": "center"
-            });
-            $("#Tip input").css({
-                "padding-left": "10%",
-                "border": "1px solid #FFF",
-                "border-radius": "5px",
-                "padding-right": "10%",
-                "width": "70%",
-                "display": "flex",
-            });
-            $("#Tip input[id='sm']").css({
-                "border": "3px solid #0bd38a",
-            });
-            $('#sm').onclick = function() {
-                $.ajax({
-                    type: "POST",
-                    url: "http://lqlsoftware.top/test/tokenLogin",
-                    data: { "username": $("#phone").val(), "password": $("#password").val(), "token": token },
-                    success: function(data) {
-                        if (data.code == 1 && data.errMsg == "") {
-                            $("#Tip").remove();
-                            initSocket();
-                        } else {
-                            $("#phone").val("");
-                            $("#password").val("");
-                            $("#phone").attr("placeholder", data.errMsg);
-                        }
-                    },
-                    dataType: "json"
-                });
-            }
-        }
-    };
-
-    webSocket.onerror = function(event) {
-        console.log(event);
-    };
-
-    webSocket.onopen = function(event) {
-        console.log(event);
-    };
-
-    webSocket.onclose = function() {
-        if (tryTime < 10) {
-            if (tryTime == 0) $('#chat').append('<li class="sys">Try connecting...</li>');
-            setTimeout(function() {
-                webSocket = null;
-                tryTime++;
-                initSocket();
-            }, 500);
+            // 收到消息
+            onMessage(msg);
         } else {
-            tryTime = 0;
+            // 收到系统消息
+            onSysMessage(data);
         }
-    };
+    }
+};
 
-    webSocket.onerror = function() {
-        $('#chat').append('<li class="sys">Connecting Error!</li>');
-    };
+webSocket.onerror = function(event) {
+    console.log(event);
+};
+
+webSocket.onopen = function(event) {
+    console.log(event);
+};
+
+webSocket.onclose = function() {
+    if (tryTime < 10) {
+        if (tryTime == 0) $('#chat').append('<li class="sys">Try connecting...</li>');
+        setTimeout(function() {
+            webSocket = null;
+            tryTime++;
+            initSocket();
+        }, 500);
+    } else {
+        tryTime = 0;
+    }
+};
+
+webSocket.onerror = function() {
+    $('#chat').append('<li class="sys">Connecting Error!</li>');
+};
 }
 
 $(document).ready(function() {
