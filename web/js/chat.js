@@ -52,7 +52,24 @@ function setUserConfig(config) {
         "background-position": "center",
         "background-color": "none"
     })
-    $('<style>.me::before{background-image:url(bg/' + myHead + ')}</style>').appendTo('head');
+    $('.chat-thread.me{' +
+        'animation: me 0.15s 1 ease-in;' +
+        '-moz-animation: me 0.15s 1 ease-in;' +
+        '-webkit-animation: me 0.15s 1 ease-in;' +
+        'float: right;' +
+        'margin-right: 80px;' +
+        'margin-bottom: 10px;' +
+        'color: #0AD5C1;' +
+        'background-color: rgba(25, 147, 147, 0.2);' +
+        '}' +
+        '.chat-thread .me:before {' +
+        'right: -80px;' +
+        'background-image:url(bg/' + myHead + ');' +
+        '.chat-thread .me:after {' +
+        'border-right: 15px solid transparent;' +
+        'right: -15px;' +
+        '}'
+    ).appendTo('head');
 }
 
 function onMessage(msg) {
