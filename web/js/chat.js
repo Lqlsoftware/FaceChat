@@ -219,7 +219,6 @@ webSocket.onclose = function() {
 webSocket.onerror = function() {
     $('#chat').append('<li class="sys">Connecting Error!</li>');
 };
-}
 
 $(document).ready(function() {
     initSocket();
