@@ -1,16 +1,4 @@
 # FuckChat
 基于WebSocket协议构建的多人在线聊天工具
-部署地址
-[http://lqlsoftware.top/test/](http://lqlsoftware.top/test/)
 
-### 用户登陆
-没有开发hybrid app，暂时实现用户添加到主页面以url方式存储token + token验证方式进行登录验证。
-
-### 消息推送
-使用map存储用户的session，在接收到转发请求的时候向所有在线用户推送消息。
-
-### 多媒体与系统消息
-实现图片／视频消息的发送，并支持之间播放和查看；在PC端实现了语音消息的发送和接收，但考虑到手机内safari的兼容性(H5无法调用麦克风)，将此功能删去。支持系统消息的推送。
-
-### 并发与处理
-测试人数较少，暂未出现服务器阻塞的情况，考虑使用netty框架，使用redis队列处理用户发送的信息，暂时不考虑多服务器负载均衡。
+![FuckChat](https://github.com/Lqlsoftware/FuckChat/blob/master/web/images/fuckchat.png?raw=true)
